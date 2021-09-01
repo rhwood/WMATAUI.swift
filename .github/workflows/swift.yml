@@ -1,0 +1,25 @@
+name: Swift
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      # Using swift would be preferred, but need to use xcodebuild as it allows
+      # the specification of variants, which the swift command does not
+      run: xcodebuild build -scheme WMATAUI -destination 'platform=macOS,variant=Mac Catalyst'
+      # run: swift build -v
+    - name: Run tests
+      # Using swift would be preferred, but need to use xcodebuild as it allows
+      # the specification of variants, which the swift command does not
+      run: xcodebuild test -scheme WMATAUI -destination 'platform=macOS,variant=Mac Catalyst'
+      # run: swift test -v

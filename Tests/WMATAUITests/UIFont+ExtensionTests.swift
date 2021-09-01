@@ -2,6 +2,7 @@ import XCTest
 import SwiftUI
 @testable import WMATAUI
 
+@available(macCatalyst 14.0, *)
 final class UIFontExtensionTests: XCTestCase {
 
     func testWith() {

@@ -3,6 +3,7 @@ import SwiftUI
 import WMATA
 @testable import WMATAUI
 
+@available(macCatalyst 14.0, *)
 final class WMATAUITests: XCTestCase {
 
     func testAllLines() {
