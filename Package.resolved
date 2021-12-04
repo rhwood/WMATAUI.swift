@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "GTFS",
+        "repositoryURL": "https://github.com/emma-k-alexandra/GTFS.git",
+        "state": {
+          "branch": null,
+          "revision": "92197f4c41aba53889a2db1e2e9d6dbe4022a223",
+          "version": "1.0.1"
+        }
+      },
+      {
+        "package": "SwiftProtobuf",
+        "repositoryURL": "https://github.com/apple/swift-protobuf.git",
+        "state": {
+          "branch": null,
+          "revision": "7e2c5f3cbbeea68e004915e3a8961e20bd11d824",
+          "version": "1.18.0"
+        }
+      },
+      {
+        "package": "WMATA",
+        "repositoryURL": "https://github.com/emma-k-alexandra/WMATA.swift",
+        "state": {
+          "branch": null,
+          "revision": "a794b2fc219819e366d225412f80c7cc9586b679",
+          "version": "10.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
