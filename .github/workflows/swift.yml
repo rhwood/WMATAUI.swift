@@ -27,7 +27,7 @@ jobs:
       - name: Build
         # Using swift would be preferred, but using xcodebuild as it allows
         # the specification of variants, which the swift command does not
-        run: xcodebuild build -scheme WMATUI -destination ${{ matrix.destination }}
+        run: xcodebuild build -scheme WMATAUI -destination ${{ matrix.destination }}
         # run: swift build -v
       - name: Run tests
         # Using swift would be preferred, but using xcodebuild as it allows
