@@ -32,5 +32,16 @@ jobs:
       - name: Run tests
         # Using swift would be preferred, but using xcodebuild as it allows
         # the specification of variants, which the swift command does not
-        run: xcodebuild test -scheme WMATAUI -destination ${{ matrix.destination }}
+        run: |
+          xcodebuild test -scheme WMATAUI -destination ${{ matrix.destination }} -enableCodeCoverage YES
+          bash xccov-to-sonarqube-generic.sh ~/Library/Developer/Xcode/DerivedData/WMATAUI-frkchnavlitxovcksiblxyusidls/Logs/Test/Test-WMATAUI-2021.12.05_07-59-20--0500.xcresult > sonarqube-generic-coverage.xml
         # run: swift test -v
+      - name: Send Coverage to Sonarcloud
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.coverageReportPaths=sonarqube-generic-coverage.xml
+
