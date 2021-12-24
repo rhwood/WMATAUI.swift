@@ -10,4 +10,4 @@ SwiftUI to accompany [WMATA.swift](https://github.com/emma-k-alexandra/WMATA.swi
 - tvOS 14.0 or newer
 - macOS Catalyst 14.0 or newer
 
-This is not tested on watchOS and needs work to support macOS 11.0 or newer.
+This has not been tested on watchOS and needs work to support macOS 11.0 or newer.
