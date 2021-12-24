@@ -36,13 +36,13 @@ jobs:
           xcodebuild test -scheme WMATAUI -destination ${{ matrix.destination }} -enableCodeCoverage YES
           bash xccov-to-sonarqube-generic.sh ~/Library/Developer/Xcode/DerivedData/WMATAUI-*/Logs/Test/Test-WMATAUI-*.xcresult > sonarqube-generic-coverage.xml
         # run: swift test -v
-      - name: Send Coverage to Sonarcloud
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.coverageReportPaths=sonarqube-generic-coverage.xml
+      # - name: Send Coverage to Sonarcloud
+      #   uses: sonarsource/sonarcloud-github-action@master
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      #   with:
+      #     args: >
+      #       -Dsonar.coverageReportPaths=sonarqube-generic-coverage.xml
       - name: Setup sonarqube
         uses: warchant/setup-sonar-scanner@v3
       - name: Run sonarqube
