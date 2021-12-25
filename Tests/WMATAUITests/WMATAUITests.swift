@@ -27,6 +27,8 @@ final class WMATAUITests: XCTestCase {
         XCTAssertTrue(WMATAUI.mapOrder(.GR, .YL))
         XCTAssertTrue(WMATAUI.mapOrder(.YL, .YLRP))
         XCTAssertTrue(WMATAUI.mapOrder(.YLRP, .SV))
+        XCTAssertFalse(WMATAUI.mapOrder(.SV, .RD))
+        XCTAssertFalse(WMATAUI.mapOrder(.RD, .RD))
     }
 
     static var allTests = [

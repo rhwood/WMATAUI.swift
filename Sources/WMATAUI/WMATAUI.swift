@@ -34,12 +34,12 @@ public struct WMATAUI {
     /// Order lines in the order used by WMATA for line designations on maps.
     /// The order used is the order lines are listed on the [2019 System Map](https://wmata.com/schedules/maps/upload/2019-System-Map.pdf).
     ///
-    /// - Parameter line0: The first line.
-    /// - Parameter line1: The second line.
+    /// - Parameter left: The first line.
+    /// - Parameter right: The second line.
     ///
     /// - Returns: true if line0 is before line1 in the order on the map; false otherwise.
-    public static func mapOrder(_ line0: Line, _ line1: Line) -> Bool {
-        return allLines.firstIndex(of: line0) ?? 0 < allLines.firstIndex(of: line1) ?? 0
+    public static func mapOrder(_ left: Line, _ right: Line) -> Bool {
+        allLines.firstIndex(of: left) ?? 0 < allLines.firstIndex(of: right) ?? 0
     }
 }
 
