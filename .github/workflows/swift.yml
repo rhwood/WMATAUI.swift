@@ -55,3 +55,4 @@ jobs:
           -Dsonar.organization=rhwood
           -Dsonar.host.url=https://sonarcloud.io/
           -Dsonar.projectKey=rhwood_WMATAUI.swift
+          -Dsonar.coverageReportPaths=sonarqube-generic-coverage.xml
