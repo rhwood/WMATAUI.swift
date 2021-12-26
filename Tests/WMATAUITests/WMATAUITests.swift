@@ -6,6 +6,12 @@ import WMATA
 @available(macCatalyst 14.0, *)
 final class WMATAUITests: XCTestCase {
 
+    func testLines() {
+        for line in Line.allCases {
+            XCTAssertTrue(WMATAUI.lines.contains(line))
+        }
+    }
+
     func testAllLines() {
         XCTAssertTrue(WMATAUI.allLines.contains(.YLRP))
         for line in WMATAUI.lines {
