@@ -1,6 +1,7 @@
 import XCTest
 import SwiftUI
 import WMATA
+import ViewInspector
 @testable import WMATAUI
 
 final class LinesUITests: XCTestCase {
@@ -23,6 +24,12 @@ final class LinesUITests: XCTestCase {
         XCTAssertEqual(Line.YL.textColor, .black)
         XCTAssertEqual(Line.YLRP.textColor, .black)
         XCTAssertEqual(Line.SV.textColor, .black)
+    }
+
+    func testDot() {
+        let dot = Line.RD.dot(style: .headline, factor: 1.0)
+        XCTAssertEqual(try dot.inspect().shape(0).foregroundColor(), MetroRailColor.red)
+        XCTAssertEqual(try dot.inspect().fixedWidth(),  UIFont.preferredFont(forTextStyle: .headline).pointSize)
     }
 
     static var allTests = [
