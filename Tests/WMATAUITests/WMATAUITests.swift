@@ -7,15 +7,16 @@ import WMATA
 final class WMATAUITests: XCTestCase {
 
     func testLines() {
-        for line in Line.allCases {
-            XCTAssertTrue(WMATAUI.lines.contains(line))
+        // filter out YLRP from WMATA lines as not current route
+        Line.allCases.filter({ $0 != .YLRP }).forEach {
+            XCTAssertTrue(WMATAUI.lines.contains($0), "Expected \($0) to be present")
         }
     }
 
     func testAllLines() {
-        XCTAssertTrue(WMATAUI.allLines.contains(.YLRP))
-        for line in WMATAUI.lines {
-            XCTAssertTrue(WMATAUI.allLines.contains(line))
+        // do not filter any WMATA lines
+        Line.allCases.forEach {
+            XCTAssertTrue(WMATAUI.allLines.contains($0), "Expected \($0) to be present")
         }
     }
 
