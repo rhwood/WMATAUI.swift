@@ -24,6 +24,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 50
       - name: Build
         # Using swift would be preferred, but using xcodebuild as it allows
         # the specification of variants, which the swift command does not
