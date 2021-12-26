@@ -6,10 +6,17 @@ import WMATA
 @available(macCatalyst 14.0, *)
 final class WMATAUITests: XCTestCase {
 
+    func testLines() {
+        // filter out YLRP from WMATA lines as not current route
+        Line.allCases.filter({ $0 != .YLRP }).forEach {
+            XCTAssertTrue(WMATAUI.lines.contains($0), "Expected \($0) to be present")
+        }
+    }
+
     func testAllLines() {
-        XCTAssertTrue(WMATAUI.allLines.contains(.YLRP))
-        for line in WMATAUI.lines {
-            XCTAssertTrue(WMATAUI.allLines.contains(line))
+        // do not filter any WMATA lines
+        Line.allCases.forEach {
+            XCTAssertTrue(WMATAUI.allLines.contains($0), "Expected \($0) to be present")
         }
     }
 
@@ -27,6 +34,8 @@ final class WMATAUITests: XCTestCase {
         XCTAssertTrue(WMATAUI.mapOrder(.GR, .YL))
         XCTAssertTrue(WMATAUI.mapOrder(.YL, .YLRP))
         XCTAssertTrue(WMATAUI.mapOrder(.YLRP, .SV))
+        XCTAssertFalse(WMATAUI.mapOrder(.SV, .RD))
+        XCTAssertFalse(WMATAUI.mapOrder(.RD, .RD))
     }
 
     static var allTests = [
