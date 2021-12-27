@@ -23,7 +23,6 @@ public struct WMATAUI {
     /// - Parameter style: The font style.
     ///
     /// - Returns: The WMATA standard font in the given style.
-    @available(OSX 10.15, *)
     @available(iOS 14.0, *)
     public static func font(_ style: Font.TextStyle) -> Font {
         Font.custom("Helvetica Neue",
@@ -45,7 +44,6 @@ public struct WMATAUI {
 
 /// WMATA Rail Colors from
 /// [WMATA Brand and Style Guidelines 3/2018](https://www.wmata.com/business/procurement/solicitations/documents/Metro_Brand_and_Style_Guidelines.pdf)
-@available(OSX 10.15, *)
 public struct MetroRailColor {
 
     /// Red Line Pantone 193c from Brand and Style Guidelines 3/2018
@@ -64,7 +62,6 @@ public struct MetroRailColor {
 
 /// WMATA Bus Colors from
 /// [WMATA Brand and Style Guidelines 3/2018](https://www.wmata.com/business/procurement/solicitations/documents/Metro_Brand_and_Style_Guidelines.pdf)
-@available(OSX 10.15, *)
 public struct MetroBusColor {
     /// Bus Blue Pantone 294c from Brand and Style Guidelines 3/2018
     public static let blue = Color(.sRGB, red: 0, green: 47 / 255, blue: 108 / 255, opacity: 1)
@@ -76,7 +73,6 @@ public struct MetroBusColor {
 
 /// WMATA Secondary Color Palette from
 /// [WMATA Brand and Style Guidelines 3/2018](https://www.wmata.com/business/procurement/solicitations/documents/Metro_Brand_and_Style_Guidelines.pdf)
-@available(OSX 10.15, *)
 public struct MetroSecondaryColor {
     /// Secondary Red Pantone 485c from Brand and Style Guidelines 3/2018
     public static let red = Color(.sRGB, red: 218 / 255, green: 41 / 255, blue: 28 / 255, opacity: 1)
@@ -106,7 +102,6 @@ public struct MetroSecondaryColor {
 
 /// WMATA Station colors from
 /// [Signage Standards Manual - Station Signs 8.0](https://www.wmata.com/business/procurement/solicitations/documents/Manual%20of%20Graphics%20Standards_03032008_pages_101-201.pdf)
-@available(OSX 10.15, *)
 public struct MetroStationColor {
     /// Metro Station Brown (Pantone 448 CVC)
     public static let brown = Color(.sRGB, red: 74 / 255, green: 65 / 255, blue: 42 / 255, opacity: 1)
