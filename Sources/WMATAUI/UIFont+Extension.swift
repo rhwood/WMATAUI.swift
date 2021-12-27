@@ -12,7 +12,6 @@ extension UIFont.TextStyle {
     // rule triggered by tvOS macro, so disabling
     // swiftlint:disable cyclomatic_complexity
     /// Convert a Font.TextStyle to a UIFont.TextStyle
-    @available(OSX 10.15, *)
     static func with(textStyle: Font.TextStyle) -> UIFont.TextStyle {
         let uiFont: UIFont.TextStyle
 

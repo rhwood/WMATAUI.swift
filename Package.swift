@@ -7,7 +7,7 @@ let package = Package(
     name: "WMATAUI",
     platforms: [
         .iOS(.v13),
-        .macOS(.v10_14),
+        .macOS(.v10_15),
         .tvOS(.v14),
         .watchOS(.v6)
     ],
