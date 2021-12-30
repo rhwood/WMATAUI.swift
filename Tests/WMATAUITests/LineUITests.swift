@@ -29,7 +29,7 @@ final class LinesUITests: XCTestCase {
     func testDot() {
         let dot = Line.red.dot(style: .headline, factor: 1.0)
         XCTAssertEqual(try dot.inspect().shape(0).foregroundColor(), MetroRailColor.red)
-        XCTAssertEqual(try dot.inspect().fixedWidth(),  UIFont.preferredFont(forTextStyle: .headline).pointSize)
+        XCTAssertEqual(try dot.inspect().fixedWidth(),  WMATAUIFont.preferredFont(forTextStyle: .headline).pointSize)
     }
 
     static var allTests = [

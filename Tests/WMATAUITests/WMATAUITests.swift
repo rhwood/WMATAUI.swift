@@ -23,7 +23,7 @@ final class WMATAUITests: XCTestCase {
     func testFont() {
         XCTAssertEqual(WMATAUI.font(.headline),
                        Font.custom("Helvetica Neue",
-                                   size: UIFont.preferredFont(forTextStyle: .headline).pointSize,
+                                   size: WMATAUIFont.preferredFont(forTextStyle: .headline).pointSize,
                                    relativeTo: .headline))
     }
 

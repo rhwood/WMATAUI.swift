@@ -5,46 +5,54 @@
 //  Created by Randall Wood on 2021-01-06.
 //
 
+#if os(macOS)
+import AppKit
+public typealias WMATAUIFont = NSFont
+#else
+import UIKit
+public typealias WMATAUIFont = UIFont
+#endif
 import SwiftUI
 
-extension UIFont.TextStyle {
+@available(macOS 11.0, *)
+extension WMATAUIFont.TextStyle {
 
     // rule triggered by tvOS macro, so disabling
     // swiftlint:disable cyclomatic_complexity
     /// Convert a Font.TextStyle to a UIFont.TextStyle
-    static func with(textStyle: Font.TextStyle) -> UIFont.TextStyle {
-        let uiFont: UIFont.TextStyle
+    static func with(textStyle: Font.TextStyle) -> WMATAUIFont.TextStyle {
+        let style: WMATAUIFont.TextStyle
 
         switch textStyle {
         case .body:
-            uiFont = .body
+            style = .body
         case .callout:
-            uiFont = .callout
+            style = .callout
         case .caption:
-            uiFont = .caption1
+            style = .caption1
         case .caption2:
-            uiFont = .caption2
+            style = .caption2
         case .footnote:
-            uiFont = .footnote
+            style = .footnote
         case .headline:
-            uiFont = .headline
+            style = .headline
         case .largeTitle:
             #if os(tvOS)
             uiFont = .title1
             #else
-            uiFont = .largeTitle
+            style = .largeTitle
             #endif
         case .subheadline:
-            uiFont = .subheadline
+            style = .subheadline
         case .title:
-            uiFont = .title1
+            style = .title1
         case .title2:
-            uiFont = .title2
+            style = .title2
         case .title3:
-            uiFont = .title3
+            style = .title3
         default:
-            uiFont = .body
+            style = .body
         }
-        return uiFont
+        return style
     }
 }
