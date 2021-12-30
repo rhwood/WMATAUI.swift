@@ -9,7 +9,7 @@ let package = Package(
         .iOS(.v13),
         .macOS(.v10_15),
         .tvOS(.v14),
-        .watchOS(.v6)
+        .watchOS(.v7)
     ],
     products: [
         .library(
@@ -17,7 +17,7 @@ let package = Package(
             targets: ["WMATAUI"])
     ],
     dependencies: [
-        .package(name: "WMATA", url: "https://github.com/emma-k-alexandra/WMATA.swift", from: "10.0.0"),
+        .package(name: "WMATA", url: "https://github.com/emma-k-alexandra/WMATA.swift", from: "11.0.2"),
         .package(name: "ViewInspector", url: "https://github.com/nalexn/ViewInspector", from: "0.9.0")
     ],
     targets: [

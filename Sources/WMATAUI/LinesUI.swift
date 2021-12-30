@@ -13,17 +13,17 @@ public extension Line {
     /// The line color.
     var color: Color {
         switch self {
-        case .RD:
+        case .red:
             return MetroRailColor.red
-        case .OR:
+        case .orange:
             return MetroRailColor.orange
-        case .BL:
+        case .blue:
             return MetroRailColor.blue
-        case .GR:
+        case .green:
             return MetroRailColor.green
-        case .YL, .YLRP:
+        case .yellow, .yellowLineRushPlus:
             return MetroRailColor.yellow
-        case .SV:
+        case .silver:
             return MetroRailColor.silver
         }
     }
@@ -32,9 +32,9 @@ public extension Line {
     /// These colors match the colors used by WMATA on their public maps.
     var textColor: Color {
         switch self {
-        case .RD, .BL, .GR:
+        case .red, .blue, .green:
             return Color.white
-        case .OR, .SV, .YL, .YLRP:
+        case .orange, .silver, .yellow, .yellowLineRushPlus:
             return Color.black
         }
     }
