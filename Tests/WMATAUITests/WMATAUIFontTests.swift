@@ -3,24 +3,24 @@ import SwiftUI
 @testable import WMATAUI
 
 @available(macCatalyst 14.0, *)
-final class UIFontExtensionTests: XCTestCase {
+final class WMATAUIFontTests: XCTestCase {
 
     func testWith() {
-        XCTAssertEqual(UIFont.TextStyle.with(textStyle: Font.TextStyle.body), UIFont.TextStyle.body)
-        XCTAssertEqual(UIFont.TextStyle.with(textStyle: Font.TextStyle.callout), UIFont.TextStyle.callout)
-        XCTAssertEqual(UIFont.TextStyle.with(textStyle: Font.TextStyle.caption), UIFont.TextStyle.caption1)
-        XCTAssertEqual(UIFont.TextStyle.with(textStyle: Font.TextStyle.caption2), UIFont.TextStyle.caption2)
-        XCTAssertEqual(UIFont.TextStyle.with(textStyle: Font.TextStyle.footnote), UIFont.TextStyle.footnote)
-        XCTAssertEqual(UIFont.TextStyle.with(textStyle: Font.TextStyle.headline), UIFont.TextStyle.headline)
+        XCTAssertEqual(WMATAUIFont.TextStyle.with(textStyle: Font.TextStyle.body), WMATAUIFont.TextStyle.body)
+        XCTAssertEqual(WMATAUIFont.TextStyle.with(textStyle: Font.TextStyle.callout), WMATAUIFont.TextStyle.callout)
+        XCTAssertEqual(WMATAUIFont.TextStyle.with(textStyle: Font.TextStyle.caption), WMATAUIFont.TextStyle.caption1)
+        XCTAssertEqual(WMATAUIFont.TextStyle.with(textStyle: Font.TextStyle.caption2), WMATAUIFont.TextStyle.caption2)
+        XCTAssertEqual(WMATAUIFont.TextStyle.with(textStyle: Font.TextStyle.footnote), WMATAUIFont.TextStyle.footnote)
+        XCTAssertEqual(WMATAUIFont.TextStyle.with(textStyle: Font.TextStyle.headline), WMATAUIFont.TextStyle.headline)
         #if os(tvOS)
-        XCTAssertEqual(UIFont.TextStyle.with(textStyle: Font.TextStyle.largeTitle), UIFont.TextStyle.title1)
+        XCTAssertEqual(WMATAUIFont.TextStyle.with(textStyle: Font.TextStyle.largeTitle), WMATAUIFont.TextStyle.title1)
         #else
-        XCTAssertEqual(UIFont.TextStyle.with(textStyle: Font.TextStyle.largeTitle), UIFont.TextStyle.largeTitle)
+        XCTAssertEqual(WMATAUIFont.TextStyle.with(textStyle: Font.TextStyle.largeTitle), WMATAUIFont.TextStyle.largeTitle)
         #endif
-        XCTAssertEqual(UIFont.TextStyle.with(textStyle: Font.TextStyle.subheadline), UIFont.TextStyle.subheadline)
-        XCTAssertEqual(UIFont.TextStyle.with(textStyle: Font.TextStyle.title), UIFont.TextStyle.title1)
-        XCTAssertEqual(UIFont.TextStyle.with(textStyle: Font.TextStyle.title2), UIFont.TextStyle.title2)
-        XCTAssertEqual(UIFont.TextStyle.with(textStyle: Font.TextStyle.title3), UIFont.TextStyle.title3)
+        XCTAssertEqual(WMATAUIFont.TextStyle.with(textStyle: Font.TextStyle.subheadline), WMATAUIFont.TextStyle.subheadline)
+        XCTAssertEqual(WMATAUIFont.TextStyle.with(textStyle: Font.TextStyle.title), WMATAUIFont.TextStyle.title1)
+        XCTAssertEqual(WMATAUIFont.TextStyle.with(textStyle: Font.TextStyle.title2), WMATAUIFont.TextStyle.title2)
+        XCTAssertEqual(WMATAUIFont.TextStyle.with(textStyle: Font.TextStyle.title3), WMATAUIFont.TextStyle.title3)
     }
 
     static var allTests = [
