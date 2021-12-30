@@ -38,7 +38,7 @@ extension WMATAUIFont.TextStyle {
             style = .headline
         case .largeTitle:
             #if os(tvOS)
-            uiFont = .title1
+            style = .title1
             #else
             style = .largeTitle
             #endif
