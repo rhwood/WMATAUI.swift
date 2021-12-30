@@ -23,10 +23,11 @@ public struct WMATAUI {
     /// - Parameter style: The font style.
     ///
     /// - Returns: The WMATA standard font in the given style.
-    @available(iOS 14.0, *)
+    @available(macCatalyst 14.0, *)
+    @available(macOS 11.0, *)
     public static func font(_ style: Font.TextStyle) -> Font {
         Font.custom("Helvetica Neue",
-                    size: UIFont.preferredFont(forTextStyle: UIFont.TextStyle.with(textStyle: style)).pointSize,
+                    size: WMATAUIFont.preferredFont(forTextStyle: WMATAUIFont.TextStyle.with(textStyle: style)).pointSize,
                     relativeTo: style)
     }
 
@@ -36,7 +37,7 @@ public struct WMATAUI {
     /// - Parameter left: The first line.
     /// - Parameter right: The second line.
     ///
-    /// - Returns: true if line0 is before line1 in the order on the map; false otherwise.
+    /// - Returns: true if `left` is before `right` in the order on the map; false otherwise.
     public static func mapOrder(_ left: Line, _ right: Line) -> Bool {
         allLines.firstIndex(of: left)! < allLines.firstIndex(of: right)!
     }

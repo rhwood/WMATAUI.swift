@@ -45,8 +45,9 @@ public extension Line {
     /// - Parameter factor: Optional factor to multiply the point size of the style by, defaults to 0.9.
     ///
     /// - Returns: A circle in in the color of this line sized to match the text style.
-    func dot(style: UIFont.TextStyle, factor: CGFloat = 0.9) -> some View {
-        let size = UIFont.preferredFont(forTextStyle: style).pointSize * factor
+    @available(macOS 11.0, *)
+    func dot(style: WMATAUIFont.TextStyle, factor: CGFloat = 0.9) -> some View {
+        let size = WMATAUIFont.preferredFont(forTextStyle: style).pointSize * factor
         return Circle()
             .foregroundColor(self.color)
             .frame(width: size, height: size, alignment: .center)
