@@ -6,9 +6,9 @@ import WMATA
 final class StationsUITests: XCTestCase {
 
     func testConnections() {
-        XCTAssertEqual(Station.A01.connections(to: .RD), [.BL, .OR, .SV])
-        XCTAssertEqual(Station.A02.connections(to: .RD), [])
-        XCTAssertEqual(Station.C15.connections(to: .YLRP), [.YL])
+        XCTAssertEqual(Station.metroCenterUpper.connections(to: .red), [.blue, .orange, .silver])
+        XCTAssertEqual(Station.farragutNorth.connections(to: .red), [])
+        XCTAssertEqual(Station.huntington.connections(to: .yellowLineRushPlus), [.yellow])
     }
 
     static var allTests = [

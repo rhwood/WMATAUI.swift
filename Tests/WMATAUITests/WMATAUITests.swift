@@ -8,7 +8,7 @@ final class WMATAUITests: XCTestCase {
 
     func testLines() {
         // filter out YLRP from WMATA lines as not current route
-        Line.allCases.filter({ $0 != .YLRP }).forEach {
+        Line.allCases.filter({ $0 != .yellowLineRushPlus }).forEach {
             XCTAssertTrue(WMATAUI.lines.contains($0), "Expected \($0) to be present")
         }
     }
@@ -28,14 +28,14 @@ final class WMATAUITests: XCTestCase {
     }
 
     func testMapOrder() {
-        XCTAssertTrue(WMATAUI.mapOrder(.RD, .OR))
-        XCTAssertTrue(WMATAUI.mapOrder(.OR, .BL))
-        XCTAssertTrue(WMATAUI.mapOrder(.BL, .GR))
-        XCTAssertTrue(WMATAUI.mapOrder(.GR, .YL))
-        XCTAssertTrue(WMATAUI.mapOrder(.YL, .YLRP))
-        XCTAssertTrue(WMATAUI.mapOrder(.YLRP, .SV))
-        XCTAssertFalse(WMATAUI.mapOrder(.SV, .RD))
-        XCTAssertFalse(WMATAUI.mapOrder(.RD, .RD))
+        XCTAssertTrue(WMATAUI.mapOrder(.red, .orange))
+        XCTAssertTrue(WMATAUI.mapOrder(.orange, .blue))
+        XCTAssertTrue(WMATAUI.mapOrder(.blue, .green))
+        XCTAssertTrue(WMATAUI.mapOrder(.green, .yellow))
+        XCTAssertTrue(WMATAUI.mapOrder(.yellow, .yellowLineRushPlus))
+        XCTAssertTrue(WMATAUI.mapOrder(.yellowLineRushPlus, .silver))
+        XCTAssertFalse(WMATAUI.mapOrder(.silver, .red))
+        XCTAssertFalse(WMATAUI.mapOrder(.red, .red))
     }
 
     static var allTests = [

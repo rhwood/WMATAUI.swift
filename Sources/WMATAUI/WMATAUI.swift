@@ -11,11 +11,11 @@ import WMATA
 public struct WMATAUI {
 
     /// Active lines in the order listed on the [2019 System Map](https://wmata.com/schedules/maps/upload/2019-System-Map.pdf).
-    public static let lines: [Line] = [.RD, .OR, .BL, .GR, .YL, .SV]
+    public static let lines: [Line] = [.red, .orange, .blue, .green, .yellow, .silver]
 
     /// All lines in the order listed on the [2019 System Map](https://wmata.com/schedules/maps/upload/2019-System-Map.pdf).
     /// This includes the Yellow Rush Plus (YLRP, ran from 2012 to 2017) line after Yellow (YL).
-    public static let allLines: [Line] = [.RD, .OR, .BL, .GR, .YL, .YLRP, .SV]
+    public static let allLines: [Line] = [.red, .orange, .blue, .green, .yellow, .yellowLineRushPlus, .silver]
 
     /// The WMATA standard font with the given style. The WMATA style guide stipulates the use of Helvetica Neue.
     /// Note that station signage uses multiple variations of Helvetica for different signage.
@@ -107,18 +107,4 @@ public struct MetroStationColor {
     public static let brown = Color(.sRGB, red: 74 / 255, green: 65 / 255, blue: 42 / 255, opacity: 1)
     /// Metro Station Light Brown (Pantone Warm Gray 10 C)
     public static let lightBrown = Color(.sRGB, red: 121 / 255, green: 110 / 255, blue: 101 / 255, opacity: 1)
-}
-
-extension RailPrediction: Identifiable {
-
-    public var id: String {
-        return line.rawValue + group + destination + minutes
-    }
-}
-
-extension BusPrediction: Identifiable {
-
-    public var id: String {
-        return route.id + tripId + vehicleId + minutes.description
-    }
 }

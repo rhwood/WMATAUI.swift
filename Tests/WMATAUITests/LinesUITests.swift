@@ -7,27 +7,27 @@ import ViewInspector
 final class LinesUITests: XCTestCase {
 
     func testColor() {
-        XCTAssertEqual(Line.RD.color, MetroRailColor.red)
-        XCTAssertEqual(Line.OR.color, MetroRailColor.orange)
-        XCTAssertEqual(Line.BL.color, MetroRailColor.blue)
-        XCTAssertEqual(Line.GR.color, MetroRailColor.green)
-        XCTAssertEqual(Line.YL.color, MetroRailColor.yellow)
-        XCTAssertEqual(Line.YLRP.color, MetroRailColor.yellow)
-        XCTAssertEqual(Line.SV.color, MetroRailColor.silver)
+        XCTAssertEqual(Line.red.color, MetroRailColor.red)
+        XCTAssertEqual(Line.orange.color, MetroRailColor.orange)
+        XCTAssertEqual(Line.blue.color, MetroRailColor.blue)
+        XCTAssertEqual(Line.green.color, MetroRailColor.green)
+        XCTAssertEqual(Line.yellow.color, MetroRailColor.yellow)
+        XCTAssertEqual(Line.yellowLineRushPlus.color, MetroRailColor.yellow)
+        XCTAssertEqual(Line.silver.color, MetroRailColor.silver)
     }
 
     func testTextColor() {
-        XCTAssertEqual(Line.RD.textColor, .white)
-        XCTAssertEqual(Line.OR.textColor, .black)
-        XCTAssertEqual(Line.BL.textColor, .white)
-        XCTAssertEqual(Line.GR.textColor, .white)
-        XCTAssertEqual(Line.YL.textColor, .black)
-        XCTAssertEqual(Line.YLRP.textColor, .black)
-        XCTAssertEqual(Line.SV.textColor, .black)
+        XCTAssertEqual(Line.red.textColor, .white)
+        XCTAssertEqual(Line.orange.textColor, .black)
+        XCTAssertEqual(Line.blue.textColor, .white)
+        XCTAssertEqual(Line.green.textColor, .white)
+        XCTAssertEqual(Line.yellow.textColor, .black)
+        XCTAssertEqual(Line.yellowLineRushPlus.textColor, .black)
+        XCTAssertEqual(Line.silver.textColor, .black)
     }
 
     func testDot() {
-        let dot = Line.RD.dot(style: .headline, factor: 1.0)
+        let dot = Line.red.dot(style: .headline, factor: 1.0)
         XCTAssertEqual(try dot.inspect().shape(0).foregroundColor(), MetroRailColor.red)
         XCTAssertEqual(try dot.inspect().fixedWidth(),  UIFont.preferredFont(forTextStyle: .headline).pointSize)
     }

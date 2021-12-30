@@ -16,9 +16,10 @@ extension Station {
     ///
     /// - Returns: An array of connecting lines; this is empty if the `to` line is the only line at this station.
     func connections(to line: Line?) -> [Line] {
-        return self.lines.filter({
-            $0 != line
-        })
+        self.allTogether
+            .map({ $0.lines })
+            .joined()
+            .filter({ $0 != line })
     }
 
 }
