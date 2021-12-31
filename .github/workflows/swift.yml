@@ -21,7 +21,8 @@ jobs:
           "'platform=macOS,variant=Mac Catalyst'",
           "'platform=macOS'",
           "'platform=tvOS Simulator,name=Apple TV'",
-          "'platform=iOS Simulator,name=iPhone 8'"
+          "'platform=iOS Simulator,name=iPhone 8'",
+          "'platform=watchOS Simulator,name=Apple Watch Series 4 - 40mm'"
         ]
     runs-on: macos-latest
 
