@@ -18,7 +18,10 @@ jobs:
     strategy:
       matrix:
         destination: [
-          "'platform=macOS,variant=Mac Catalyst'"
+          "'platform=macOS,variant=Mac Catalyst'",
+          "'platform=macOS'",
+          "'platform=tvOS'",
+          "'platform=iOS'"
         ]
     runs-on: macos-latest
 
