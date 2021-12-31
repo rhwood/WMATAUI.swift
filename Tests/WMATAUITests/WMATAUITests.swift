@@ -13,8 +13,4 @@ final class WMATAUITests: XCTestCase {
                                    size: WMATAUIFont.preferredFont(forTextStyle: .headline).pointSize,
                                    relativeTo: .headline))
     }
-
-    static var allTests = [
-        ("testFont", testFont)
-    ]
 }

@@ -45,12 +45,4 @@ final class LinesUITests: XCTestCase {
         XCTAssertEqual([.red, .yellow, .silver], unsorted.sorted())
         XCTAssertEqual([.silver, .yellow, .red], unsorted.sorted(by: >))
     }
-    
-    static var allTests = [
-        ("testColor", testColor),
-        ("testTextColor", testTextColor),
-        ("testDot", testDot),
-        ("testAllInMapOrder", testAllInMapOrder),
-        ("testComparable", testComparable)
-    ]
 }

@@ -23,8 +23,4 @@ final class WMATAUIFontTests: XCTestCase {
         XCTAssertEqual(WMATAUIFont.TextStyle.with(textStyle: Font.TextStyle.title2), WMATAUIFont.TextStyle.title2)
         XCTAssertEqual(WMATAUIFont.TextStyle.with(textStyle: Font.TextStyle.title3), WMATAUIFont.TextStyle.title3)
     }
-
-    static var allTests = [
-        ("testWith", testWith)
-    ]
 }
