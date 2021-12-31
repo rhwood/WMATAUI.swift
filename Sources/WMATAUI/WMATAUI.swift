@@ -73,6 +73,7 @@ public extension Font {
     /// - Parameter style: The font style.
     ///
     /// - Returns: The WMATA standard font in the given style.
+    @available(iOS 14.0, *)
     @available(macCatalyst 14.0, *)
     @available(macOS 11.0, *)
     static func metroFont(_ style: Font.TextStyle) -> Font {
