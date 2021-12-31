@@ -20,8 +20,8 @@ jobs:
         destination: [
           "'platform=macOS,variant=Mac Catalyst'",
           "'platform=macOS'",
-          "'platform=tvOS'",
-          "'platform=iOS'"
+          "'platform=tvOS Simulator'",
+          "'platform=iOS Simulator'"
         ]
     runs-on: macos-latest
 
