@@ -15,7 +15,7 @@ public typealias WMATAUIFont = UIFont
 import SwiftUI
 
 @available(macOS 11.0, *)
-extension WMATAUIFont.TextStyle {
+public extension WMATAUIFont.TextStyle {
 
     // rule triggered by tvOS macro, so disabling
     // swiftlint:disable cyclomatic_complexity
