@@ -47,8 +47,8 @@ public extension Line {
     ///
     /// - Returns: A circle in in the color of this line sized to match the text style.
     @available(macOS 11.0, *)
-    func dot(style: WMATAUIFont.TextStyle, factor: CGFloat = 0.9) -> some View {
-        let size = WMATAUIFont.preferredFont(forTextStyle: style).pointSize * factor
+    func dot(style: Font.TextStyle, factor: CGFloat = 0.9) -> some View {
+        let size = WMATAUIFont.preferredFont(forTextStyle: .with(textStyle: style)).pointSize * factor
         return Circle()
             .foregroundColor(self.color)
             .frame(width: size, height: size, alignment: .center)
