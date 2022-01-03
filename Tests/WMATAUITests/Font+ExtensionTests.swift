@@ -4,7 +4,7 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 @available(macCatalyst 14.0, *)
-final class WMATAUIFontTests: XCTestCase {
+final class FontExtensionTests: XCTestCase {
 
     func testWith() {
         XCTAssertEqual(WMATAUIFont.TextStyle.with(textStyle: Font.TextStyle.body), WMATAUIFont.TextStyle.body)
