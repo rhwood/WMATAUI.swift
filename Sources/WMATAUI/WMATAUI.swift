@@ -33,6 +33,8 @@ public struct WMATAUI {
     ///  - Parameter style: The style to match.
     ///
     /// - Returns: A circle in in the given color sized to match the text style with the given text in a smaller size.
+    @available(iOS 14.0, *)
+    @available(macCatalyst 14.0, *)
     @available(macOS 11.0, *)
     public static func roundel(text: String, color: Color, textColor: Color, style: Font.TextStyle) -> some View {
         ZStack {

@@ -32,6 +32,8 @@ final class LinesUITests: XCTestCase {
         XCTAssertEqual(try dot.inspect().fixedWidth(),  WMATAUIFont.preferredFont(forTextStyle: .headline).pointSize)
     }
 
+    @available(iOS 14.0, *)
+    @available(macCatalyst 14.0, *)
     func testRoundel() throws {
         let roundel = Line.red.roundel(style: .headline)
         let text = try roundel.inspect().find(text: Line.red.rawValue)

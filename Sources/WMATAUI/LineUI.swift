@@ -56,6 +56,8 @@ public extension Line {
     /// - Parameter style: The style to match.
     ///
     /// - Returns: A circle in the color of this line sized to match the text style with the line code in a smaller text size.
+    @available(iOS 14.0, *)
+    @available(macCatalyst 14.0, *)
     @available(macOS 11.0, *)
     func roundel(style: Font.TextStyle) -> some View {
         WMATAUI.roundel(text: self.rawValue, color: self.color, textColor: self.textColor, style: style)
