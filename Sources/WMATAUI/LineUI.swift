@@ -53,14 +53,17 @@ public extension Line {
 
     /// Get a dot in the line color containing the two letter line code and sized for the given text style.
     ///
+    /// To get a roundel where the line code text size matches the style size, use a factor of `2.0`.
+    ///
     /// - Parameter style: The style to match.
+    /// - Parameter factor: Optional factor to multiply the point size of the style by; defaults to `1.0`.
     ///
     /// - Returns: A circle in the color of this line sized to match the text style with the line code in a smaller text size.
     @available(iOS 14.0, *)
     @available(macCatalyst 14.0, *)
     @available(macOS 11.0, *)
-    func roundel(style: Font.TextStyle) -> some View {
-        WMATAUI.roundel(text: self.rawValue, color: self.color, textColor: self.textColor, style: style)
+    func roundel(style: Font.TextStyle, factor: CGFloat = 1.0) -> some View {
+        WMATAUI.roundel(text: self.rawValue, color: self.color, textColor: self.textColor, style: style, factor: factor)
     }
 }
 

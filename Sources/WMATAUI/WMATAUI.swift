@@ -27,20 +27,23 @@ public struct WMATAUI {
 
     /// Get a color dot sized for the given text style with a smaller text within it. This really works only for one or two character strings.
     ///
+    /// To get a roundel where the line code text size matches the style size, use a factor of `2.0`.
+    ///
     ///  - Parameter text: The text to display.
     ///  - Parameter color: The color of the dot.
     ///  - Parameter textColor: The color of the text in the dot.
     ///  - Parameter style: The style to match.
+    ///  - Parameter factor: Optional factor to multiply the point size of the style by; defaults to `1.0`.
     ///
     /// - Returns: A circle in in the given color sized to match the text style with the given text in a smaller size.
     @available(iOS 14.0, *)
     @available(macCatalyst 14.0, *)
     @available(macOS 11.0, *)
-    public static func roundel(text: String, color: Color, textColor: Color, style: Font.TextStyle) -> some View {
+    public static func roundel(text: String, color: Color, textColor: Color, style: Font.TextStyle, factor: CGFloat = 1.0) -> some View {
         ZStack {
-            WMATAUI.dot(color: color, style: style, factor: 1.0)
+            WMATAUI.dot(color: color, style: style, factor: 1.0 * factor)
             Text(text)
-                .font(.metroFont(style, factor: 0.5).weight(.bold))
+                .font(.metroFont(style, factor: 0.5 * factor).weight(.bold))
                 .foregroundColor(textColor)
         }
     }
