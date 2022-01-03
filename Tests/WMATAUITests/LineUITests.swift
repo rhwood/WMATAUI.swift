@@ -32,6 +32,12 @@ final class LinesUITests: XCTestCase {
         XCTAssertEqual(try dot.inspect().fixedWidth(),  WMATAUIFont.preferredFont(forTextStyle: .headline).pointSize)
     }
 
+    func testRoundel() throws {
+        let roundel = Line.red.roundel(style: .headline)
+        let text = try roundel.inspect().find(text: Line.red.rawValue)
+        XCTAssertEqual(try text.attributes().foregroundColor(), Line.red.textColor)
+    }
+
     func testAllInMapOrder() {
         // filter out YLRP from WMATA lines as not current route
         Line.allCases.filter({ $0 != .yellowLineRushPlus }).forEach {
