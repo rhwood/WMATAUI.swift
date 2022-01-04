@@ -22,7 +22,7 @@ public extension Line {
             return .metrorailBlue
         case .green:
             return .metrorailGreen
-        case .yellow, .yellowLineRushPlus:
+        case .yellow:
             return .metrorailYellow
         case .silver:
             return .metrorailSilver
@@ -35,7 +35,7 @@ public extension Line {
         switch self {
         case .red, .blue, .green:
             return Color.white
-        case .orange, .silver, .yellow, .yellowLineRushPlus:
+        case .orange, .silver, .yellow:
             return Color.black
         }
     }
@@ -71,11 +71,7 @@ public extension Line {
 public extension Line {
 
     /// All lines in the order listed on the [2019 System Map](https://wmata.com/schedules/maps/upload/2019-System-Map.pdf).
-    ///
-    /// This includes the Yellow Rush Plus (ran from 2012 to 2017) line after Yellow).
-    /// Yellow Line Rush Plus was never depicted separately from Yellow on the map (it was depicted as
-    /// a dashed yellow line, and trains only showed "Yellow" with a different destination sign).
-    static let allInMapOrder: [Line] = [.red, .orange, .blue, .green, .yellow, .yellowLineRushPlus, .silver]
+    static let allInMapOrder: [Line] = [.red, .orange, .blue, .green, .yellow, .silver]
 }
 
 /// Conformance with Comparable

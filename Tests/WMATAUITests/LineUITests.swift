@@ -12,7 +12,6 @@ final class LinesUITests: XCTestCase {
         XCTAssertEqual(Line.blue.color, .metrorailBlue)
         XCTAssertEqual(Line.green.color, .metrorailGreen)
         XCTAssertEqual(Line.yellow.color, .metrorailYellow)
-        XCTAssertEqual(Line.yellowLineRushPlus.color, .metrorailYellow)
         XCTAssertEqual(Line.silver.color, .metrorailSilver)
     }
 
@@ -22,7 +21,6 @@ final class LinesUITests: XCTestCase {
         XCTAssertEqual(Line.blue.textColor, .white)
         XCTAssertEqual(Line.green.textColor, .white)
         XCTAssertEqual(Line.yellow.textColor, .black)
-        XCTAssertEqual(Line.yellowLineRushPlus.textColor, .black)
         XCTAssertEqual(Line.silver.textColor, .black)
     }
 
@@ -41,8 +39,7 @@ final class LinesUITests: XCTestCase {
     }
 
     func testAllInMapOrder() {
-        // filter out YLRP from WMATA lines as not current route
-        Line.allCases.filter({ $0 != .yellowLineRushPlus }).forEach {
+        Line.allCases.forEach {
             XCTAssertTrue(Line.allInMapOrder.contains($0), "Expected \($0) to be present")
         }
     }
