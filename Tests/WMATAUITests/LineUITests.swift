@@ -39,9 +39,7 @@ final class LinesUITests: XCTestCase {
     }
 
     func testAllInMapOrder() {
-        Line.allCases.forEach {
-            XCTAssertTrue(Line.allInMapOrder.contains($0), "Expected \($0) to be present")
-        }
+        XCTAssertEqual(Line.allCases, Line.allInMapOrder)
     }
 
     func testComparable() {
