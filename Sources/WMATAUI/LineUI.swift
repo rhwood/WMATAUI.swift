@@ -83,3 +83,21 @@ extension Line: Comparable {
         allCases.firstIndex(of: lhs)! < allCases.firstIndex(of: rhs)!
     }
 }
+
+@available(iOS 14.0, *)
+@available(macCatalyst 14.0, *)
+@available(macOS 11.0, *)
+struct Line_Preview: PreviewProvider {
+    static var previews: some View {
+        let style = Font.TextStyle.largeTitle
+        VStack {
+            ForEach(Line.allCases, id: \.rawValue) { line in
+                HStack {
+                    line.roundel(style: style)
+                    Text(line.name)
+                        .font(.metroFont(style))
+                }
+            }
+        }
+    }
+}
