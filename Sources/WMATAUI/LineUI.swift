@@ -71,7 +71,8 @@ public extension Line {
 public extension Line {
 
     /// All lines in the order listed on the [2019 System Map](https://wmata.com/schedules/maps/upload/2019-System-Map.pdf).
-    static let allInMapOrder: [Line] = [.red, .orange, .blue, .green, .yellow, .silver]
+    @available(swift, deprecated: 0.7.1, message: "Use Line.allCases instead.")
+    static let allInMapOrder: [Line] = Line.allCases
 }
 
 /// Conformance with Comparable
@@ -79,6 +80,6 @@ extension Line: Comparable {
     
     /// Sort an array of Line by the order shown in the Metrorail map legend
     public static func < (lhs: Line, rhs: Line) -> Bool {
-        allInMapOrder.firstIndex(of: lhs)! < allInMapOrder.firstIndex(of: rhs)!
+        allCases.firstIndex(of: lhs)! < allCases.firstIndex(of: rhs)!
     }
 }
