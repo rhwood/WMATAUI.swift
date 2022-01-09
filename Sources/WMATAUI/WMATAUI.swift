@@ -84,7 +84,8 @@ public struct WMATAUI {
     @available(macOS 11.0, *)
     private static func roundel<Content: View>(view: Content, color: Color, textColor: Color, style: Font.TextStyle, factor: CGFloat = 1.0) -> some View {
         ZStack {
-            WMATAUI.dot(color: color, style: style, factor: factor)
+            WMATAUI.dot(color: color, style: style, factor: 1.0 * factor)
+                .layoutPriority(1)
             view
                 .font(.metroFont(style, factor: 0.5 * factor).bold())
                 .foregroundColor(textColor)
@@ -101,7 +102,7 @@ struct ContentView_Previews: PreviewProvider {
         let image = Image(systemName: "tram.fill")
         VStack {
             HStack {
-                WMATAUI.roundel(text: "AB", color: .purple, textColor: .white, style: style)
+                WMATAUI.roundel(text: "WW", color: .purple, textColor: .white, style: style)
                 Text("Text Fits").font(.metroFont(style))
             }
             HStack {
@@ -127,6 +128,13 @@ struct ContentView_Previews: PreviewProvider {
             HStack {
                 WMATAUI.roundel(text: "AB", color: .purple, textColor: .white, style: .caption)
                 Text("Tiny Text").font(.metroFont(.caption))
+            }
+            Text("Metro Brand Icons:")
+            HStack {
+                WMATAUI.roundel(image: Image(metroName: "train"), color: .gray, textColor: .purple, style: style)
+                WMATAUI.roundel(image: Image(metroName: "escalator.up"), color: .white, textColor: .green, style: style)
+                WMATAUI.roundel(image: Image(metroName: "escalator.down"), color: .green, textColor: .white, style: style)
+                WMATAUI.roundel(image: Image(metroName: "bus"), color: .green, textColor: .black, style: style)
             }
             .environment(\.sizeCategory, .extraSmall)
         }

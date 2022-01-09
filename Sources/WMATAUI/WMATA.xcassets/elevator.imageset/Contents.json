@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "elevator.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
