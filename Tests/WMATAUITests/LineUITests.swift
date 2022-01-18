@@ -4,6 +4,7 @@ import WMATA
 import ViewInspector
 @testable import WMATAUI
 
+@available(macOS 11.0, iOS 14.0, *)
 final class LinesUITests: XCTestCase {
 
     func testColor() {

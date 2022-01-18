@@ -46,7 +46,7 @@ public extension Line {
     /// - Parameter factor: Optional factor to multiply the point size of the style by, defaults to 0.9.
     ///
     /// - Returns: A circle in in the color of this line sized to match the text style.
-    @available(macOS 11.0, *)
+    @available(macOS 11.0, iOS 14.0, *)
     func dot(style: Font.TextStyle, factor: CGFloat = 0.9) -> some View {
         WMATAUI.dot(color: self.color, style: style, factor: factor)
     }
