@@ -43,7 +43,7 @@ final class LinesUITests: XCTestCase {
                 }
         )
         
-        let largeSizeExpectation = expectation(description: #function)
+        let largeSizeExpectation = expectation(description: "large\(#function)")
         showView(
             dot
                 .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
