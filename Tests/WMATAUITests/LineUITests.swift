@@ -27,8 +27,8 @@ final class LinesUITests: XCTestCase {
 
     func testDot() {
         let dot = Line.red.dot(style: .headline, factor: 1.0)
-        XCTAssertEqual(try dot.inspect().shape(0).foregroundColor(), .metrorailRed)
-        XCTAssertEqual(try dot.inspect().fixedWidth(),  WMATAUIFont.preferredFont(forTextStyle: .headline).pointSize)
+        XCTAssertEqual(try dot.inspect().image(0).foregroundColor(), .metrorailRed)
+        XCTAssertEqual(try dot.inspect().image(0).actualImage().name(), "circle.fill")
     }
 
     @available(iOS 14.0, *)
