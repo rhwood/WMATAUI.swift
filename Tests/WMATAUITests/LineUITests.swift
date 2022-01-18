@@ -30,6 +30,31 @@ final class LinesUITests: XCTestCase {
         XCTAssertEqual(try dot.inspect().image(0).foregroundColor(), .metrorailRed)
         XCTAssertEqual(try dot.inspect().image(0).actualImage().name(), "circle.fill")
     }
+    
+    func testDotSize() {
+        let dot = Line.red.dot(style: .headline, factor: 1.0)
+        
+        let baseSizeExpectation = expectation(description: #function)
+        showView(
+            dot
+                .readSize { size in
+                    XCTAssertLessThan(size.height, 40)
+                    baseSizeExpectation.fulfill()
+                }
+        )
+        
+        let largeSizeExpectation = expectation(description: #function)
+        showView(
+            dot
+                .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
+                .readSize { size in
+                    XCTAssertGreaterThan(size.height, 40)
+                    largeSizeExpectation.fulfill()
+                }
+        )
+        
+        waitForExpectations(timeout: 1)
+    }
 
     @available(iOS 14.0, *)
     @available(macCatalyst 14.0, *)
@@ -49,4 +74,27 @@ final class LinesUITests: XCTestCase {
         XCTAssertEqual([.red, .yellow, .silver], unsorted.sorted())
         XCTAssertEqual([.silver, .yellow, .red], unsorted.sorted(by: >))
     }
+}
+
+struct SizePreferenceKey: PreferenceKey {
+    static var defaultValue = CGSize.zero
+    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {}
+}
+
+extension View {
+    func readSize(onChange: @escaping (CGSize) -> Void) -> some View {
+        background(
+            GeometryReader { geometryProxy in
+                Color.clear
+                    .preference(key: SizePreferenceKey.self, value: geometryProxy.size)
+            }
+        )
+        .onPreferenceChange(SizePreferenceKey.self, perform: onChange)
+    }
+}
+
+func showView<T: View>(_ view: T) {
+    let window = UIWindow(frame: UIScreen.main.bounds)
+    window.rootViewController = UIHostingController(rootView: view)
+    window.makeKeyAndVisible()
 }
