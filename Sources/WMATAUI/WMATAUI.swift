@@ -19,8 +19,7 @@ public struct WMATAUI {
     /// - Returns: A circle in in the given color sized to match the text style.
     @available(macOS 11.0, iOS 14.0, *)
     public static func dot(color: Color, style: Font.TextStyle, factor: CGFloat = 0.9) -> some View {
-
-        return Image(systemName: "circle.fill")
+        Image(systemName: "circle.fill")
             .foregroundColor(color)
             .font(.metroFont(style, factor: factor))
     }
