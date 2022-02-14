@@ -99,6 +99,7 @@ public struct WMATAUI {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let style = Font.TextStyle.largeTitle
+        let image = Image(systemName: "tram.fill")
         VStack {
             HStack {
                 WMATAUI.roundel(text: "AB", color: .purple, textColor: .white, style: style)
@@ -109,15 +110,15 @@ struct ContentView_Previews: PreviewProvider {
                 Text("Text To Long").font(.metroFont(style))
             }
             HStack {
-                WMATAUI.roundel(image: Image(systemName: "tram.fill"), color: .purple, textColor: .white, style: style)
+                WMATAUI.roundel(image: image, color: .purple, textColor: .white, style: style)
                 Text("System Image").font(.metroFont(style))
             }
             Text("Different Colors:")
             HStack {
-                WMATAUI.roundel(image: Image(systemName: "tram.fill"), color: .gray, textColor: .purple, style: style)
-                WMATAUI.roundel(image: Image(systemName: "tram.fill"), color: .white, textColor: .green, style: style)
-                WMATAUI.roundel(image: Image(systemName: "tram.fill"), color: .green, textColor: .white, style: style)
-                WMATAUI.roundel(image: Image(systemName: "tram.fill"), color: .green, textColor: .black, style: style)
+                WMATAUI.roundel(image: image, color: .gray, textColor: .purple, style: style)
+                WMATAUI.roundel(image: image, color: .white, textColor: .green, style: style)
+                WMATAUI.roundel(image: image, color: .green, textColor: .white, style: style)
+                WMATAUI.roundel(image: image, color: .green, textColor: .black, style: style)
             }
         }
     }
