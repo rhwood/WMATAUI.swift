@@ -50,6 +50,7 @@ final class LinesUITests: XCTestCase {
     }
 }
 
+@available(iOS 14.0, *)
 final class Line_PreviewTests: XCTestCase {
 
     // test that previews are inspectable in all CI architectures as

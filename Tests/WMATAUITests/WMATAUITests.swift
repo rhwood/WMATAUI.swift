@@ -15,6 +15,7 @@ final class WMATAUITests: XCTestCase {
     }
 }
 
+@available(iOS 14.0, *)
 final class WMATAUI_PreviewsTests: XCTestCase {
 
     // test that previews are inspectable in all CI architectures as
