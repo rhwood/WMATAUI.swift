@@ -49,3 +49,13 @@ final class LinesUITests: XCTestCase {
         XCTAssertEqual([.silver, .yellow, .red], unsorted.sorted(by: >))
     }
 }
+
+final class Line_PreviewTests: XCTestCase {
+
+    // test that previews are inspectable in all CI architectures as
+    // we likely preview only in the architecture(s) we use most
+    func testPreview() {
+        XCTAssertNoThrow(try Line_Preview.previews.inspect())
+    }
+
+}

@@ -96,7 +96,7 @@ public struct WMATAUI {
 @available(iOS 14.0, *)
 @available(macCatalyst 14.0, *)
 @available(macOS 11.0, *)
-struct ContentView_Previews: PreviewProvider {
+struct WMATAUI_Preview: PreviewProvider {
     static var previews: some View {
         let style = Font.TextStyle.largeTitle
         let image = Image(systemName: "tram.fill")

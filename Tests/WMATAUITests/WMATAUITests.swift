@@ -14,3 +14,12 @@ final class WMATAUITests: XCTestCase {
                                    relativeTo: .headline))
     }
 }
+
+final class WMATAUI_PreviewsTests: XCTestCase {
+
+    // test that previews are inspectable in all CI architectures as
+    // we likely preview only in the architecture(s) we use most
+    func testPreview() {
+        XCTAssertNoThrow(try WMATAUI_Preview.previews.inspect())
+    }
+}
