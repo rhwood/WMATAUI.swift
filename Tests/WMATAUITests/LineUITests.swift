@@ -1,5 +1,6 @@
 import XCTest
 import SwiftUI
+import UIKit
 import WMATA
 import ViewInspector
 @testable import WMATAUI
