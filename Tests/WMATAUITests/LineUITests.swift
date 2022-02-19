@@ -34,12 +34,28 @@ final class LinesUITests: XCTestCase {
     
     func testDotSize() {
         let dot = Line.red.dot(style: .headline, factor: 1.0)
+#if targetEnvironment(macCatalyst) // macCatalyst builds as if iOS without this target environment
+        let baseFontSize = 19.0
+        let largeFontSize = 25.0
+#elseif os(macOS)
+        let baseFontSize = 19.0
+        let largeFontSize = 25.0
+#elseif os(iOS) // not sure if these are iPhone only sizes, or iPhone + iPad sizes
+        let baseFontSize = 19.0
+        let largeFontSize = 55.0
+#elseif os(tvOS)
+        let baseFontSize = 44.0
+        let largeFontSize = 44.0
+#else // watchOS
+        let baseFontSize = 40.0
+        let largeFontSize = 40.0
+#endif
         
         let baseSizeExpectation = expectation(description: #function)
         showView(
             dot
                 .readSize { size in
-                    XCTAssertLessThan(size.height, 40)
+                    XCTAssertEqual(size.height, baseFontSize)
                     baseSizeExpectation.fulfill()
                 }
         )
@@ -49,7 +65,7 @@ final class LinesUITests: XCTestCase {
             dot
                 .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
                 .readSize { size in
-                    XCTAssertGreaterThan(size.height, 40)
+                    XCTAssertEqual(size.height, largeFontSize)
                     largeSizeExpectation.fulfill()
                 }
         )
