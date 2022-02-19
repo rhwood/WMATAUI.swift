@@ -44,6 +44,11 @@ jobs:
           xcodebuild test -scheme WMATAUI -destination ${{ matrix.destination }} -enableCodeCoverage YES
           bash xccov-to-sonarqube-generic.sh ~/Library/Developer/Xcode/DerivedData/WMATAUI-*/Logs/Test/Test-WMATAUI-*.xcresult > sonarqube-generic-coverage.xml
         # run: swift test -v
+      - name: Upload coverate to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          fail_ci_if_error: true
+          verbose: true
       # - name: Send Coverage to Sonarcloud
       #   uses: sonarsource/sonarcloud-github-action@master
       #   env:
