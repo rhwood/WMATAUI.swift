@@ -88,5 +88,9 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# macOS Finder data
 .DS_Store
-sonarqube-generic-coverage.xml
+
+# coverage report
+coverage.lcov
