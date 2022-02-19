@@ -43,10 +43,12 @@ jobs:
         run: |
           xcodebuild test -scheme WMATAUI -destination ${{ matrix.destination }} -enableCodeCoverage YES
           bash xccov-to-sonarqube-generic.sh ~/Library/Developer/Xcode/DerivedData/WMATAUI-*/Logs/Test/Test-WMATAUI-*.xcresult > sonarqube-generic-coverage.xml
+          xcrun llvm-cov export --format="lcov" --instr-profile=$( echo ~/Library/Developer/Xcode/DerivedData/WMATAUI-*/Build/ProfileData/*/Coverage.profdata ) --object=$( echo ~/Library/Developer/Xcode/DerivedData/WMATAUI-*/Build/Products/Debug/WMATAUI.o ) > coverage.lcov
         # run: swift test -v
-      - name: Upload coverate to Codecov
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
         with:
+          files: coverage.lcov
           fail_ci_if_error: true
           verbose: true
       # - name: Send Coverage to Sonarcloud
