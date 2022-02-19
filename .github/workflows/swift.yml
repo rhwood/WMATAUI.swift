@@ -42,7 +42,7 @@ jobs:
         # the specification of variants, which the swift command does not
         run: |
           xcodebuild test -scheme WMATAUI -destination ${{ matrix.destination }} -enableCodeCoverage YES
-          xcrun llvm-cov export --format="lcov" --instr-profile=$( echo ~/Library/Developer/Xcode/DerivedData/WMATAUI-*/Build/ProfileData/*/Coverage.profdata ) --object=$( echo ~/Library/Developer/Xcode/DerivedData/WMATAUI-*/Build/Products/Debug/WMATAUI.o ) > coverage.lcov
+          xcrun llvm-cov export --format="lcov" --instr-profile=$( echo ~/Library/Developer/Xcode/DerivedData/WMATAUI-*/Build/ProfileData/*/Coverage.profdata ) --object=$( echo ~/Library/Developer/Xcode/DerivedData/WMATAUI-*/Build*/Products/Debug/WMATAUI.o ) > coverage.lcov
         # run: swift test -v
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
