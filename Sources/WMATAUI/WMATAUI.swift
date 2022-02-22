@@ -17,12 +17,11 @@ public struct WMATAUI {
     /// - Parameter factor: Optional factor to multiply the point size of the style by; defaults to `0.9`.
     ///
     /// - Returns: A circle in in the given color sized to match the text style.
-    @available(macOS 11.0, *)
+    @available(macOS 11.0, iOS 14.0, *)
     public static func dot(color: Color, style: Font.TextStyle, factor: CGFloat = 0.9) -> some View {
-        let size = WMATAUIFont.preferredFont(forTextStyle: .with(textStyle: style)).pointSize * factor
-        return Circle()
+        Image(systemName: "circle.fill")
             .foregroundColor(color)
-            .frame(width: size, height: size, alignment: .center)
+            .font(.metroFont(style, factor: factor))
     }
 
     /// Get a color dot sized for the given text style with a smaller text within it. This really works only for one or two character strings.
@@ -39,8 +38,8 @@ public struct WMATAUI {
     @available(iOS 14.0, *)
     @available(macCatalyst 14.0, *)
     @available(macOS 11.0, *)
-    public static func roundel(text: String, color: Color, textColor: Color, style: Font.TextStyle, factor: CGFloat = 1.0) -> some View {
-        WMATAUI.roundel(view: AnyView(Text(text)),
+    public static func roundel<S: StringProtocol>(text: S, color: Color, textColor: Color, style: Font.TextStyle, factor: CGFloat = 1.0) -> some View {
+        WMATAUI.roundel(view: Text(text),
                         color: color,
                         textColor: textColor,
                         style: style,
@@ -62,7 +61,7 @@ public struct WMATAUI {
     @available(macCatalyst 14.0, *)
     @available(macOS 11.0, *)
     public static func roundel(image: Image, color: Color, textColor: Color, style: Font.TextStyle, factor: CGFloat = 1.0) -> some View {
-        WMATAUI.roundel(view: AnyView(image),
+        WMATAUI.roundel(view: image,
                         color: color,
                         textColor: textColor,
                         style: style,
@@ -83,11 +82,11 @@ public struct WMATAUI {
     @available(iOS 14.0, *)
     @available(macCatalyst 14.0, *)
     @available(macOS 11.0, *)
-    private static func roundel(view: AnyView, color: Color, textColor: Color, style: Font.TextStyle, factor: CGFloat = 1.0) -> some View {
+    private static func roundel<Content: View>(view: Content, color: Color, textColor: Color, style: Font.TextStyle, factor: CGFloat = 1.0) -> some View {
         ZStack {
-            WMATAUI.dot(color: color, style: style, factor: 1.0 * factor)
+            WMATAUI.dot(color: color, style: style, factor: factor)
             view
-                .font(.metroFont(style, factor: 0.5 * factor).weight(.bold))
+                .font(.metroFont(style, factor: 0.5 * factor).bold())
                 .foregroundColor(textColor)
         }
     }
@@ -120,6 +119,17 @@ struct ContentView_Previews: PreviewProvider {
                 WMATAUI.roundel(image: image, color: .green, textColor: .white, style: style)
                 WMATAUI.roundel(image: image, color: .green, textColor: .black, style: style)
             }
+            HStack {
+                WMATAUI.roundel(text: "AB", color: .purple, textColor: .white, style: style)
+                Text("Huge Text").font(.metroFont(style))
+            }
+            .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
+            HStack {
+                WMATAUI.roundel(text: "AB", color: .purple, textColor: .white, style: .caption)
+                Text("Tiny Text").font(.metroFont(.caption))
+            }
+            .environment(\.sizeCategory, .extraSmall)
         }
+        
     }
 }
