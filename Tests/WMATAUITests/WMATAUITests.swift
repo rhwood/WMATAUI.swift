@@ -23,9 +23,10 @@ final class WMATAUITests: XCTestCase {
     func testImageRoundel() throws {
         let image = Image(metroName: "train")
         let roundel = WMATAUI.roundel(image: image, color: .red, textColor: .white, style: .headline)
-        let inspectable = try roundel.inspect().zStack().anyView(1).image()
-        XCTAssertEqual(try inspectable.actualImage(), image)
-        XCTAssertEqual(try inspectable.foregroundColor(), .white)
+        let background = try roundel.inspect().zStack().image(0)
+        let foreground = try roundel.inspect().zStack().image(1)
+        XCTAssertEqual(try background.foregroundColor(), .red)
+        XCTAssertEqual(try foreground.foregroundColor(), .white)
     }
 
 }
