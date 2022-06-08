@@ -98,7 +98,9 @@ final class LinesUITests: XCTestCase {
 
 struct SizePreferenceKey: PreferenceKey {
     static var defaultValue = CGSize.zero
-    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {}
+    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
+        // use `value` without modification
+    }
 }
 
 extension View {
