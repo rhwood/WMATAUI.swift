@@ -22,7 +22,7 @@ jobs:
           "'platform=macOS'",
           "'platform=tvOS Simulator,name=Apple TV'",
           "'platform=iOS Simulator,name=iPhone 8'",
-          "'platform=watchOS Simulator,name=Apple Watch Series 4 - 40mm'"
+          "'platform=watchOS Simulator,name=Apple Watch Series 5 - 40mm'"
         ]
     runs-on: macos-12
 
