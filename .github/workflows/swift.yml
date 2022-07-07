@@ -22,16 +22,16 @@ jobs:
           "'platform=macOS'",
           "'platform=tvOS Simulator,name=Apple TV'",
           "'platform=iOS Simulator,name=iPhone 8'",
-          "'platform=watchOS Simulator,name=Apple Watch Series 4 - 40mm'"
+          "'platform=watchOS Simulator,name=Apple Watch Series 5 - 40mm'"
         ]
-    runs-on: macos-latest
+    runs-on: macos-12
 
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 50
-      - name: Set Xcode version
-        run: sudo xcode-select -s /Applications/Xcode_13.2.1.app
+      #- name: Set Xcode version
+      #  run: sudo xcode-select -s /Applications/Xcode_13.2.1.app
       - name: Build
         # Using swift would be preferred, but using xcodebuild as it allows
         # the specification of variants, which the swift command does not

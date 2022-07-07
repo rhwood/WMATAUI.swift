@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.6
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -17,13 +17,13 @@ let package = Package(
             targets: ["WMATAUI"])
     ],
     dependencies: [
-        .package(name: "WMATA", url: "https://github.com/emma-k-alexandra/WMATA.swift", from: "13.3.2"),
-        .package(name: "ViewInspector", url: "https://github.com/nalexn/ViewInspector", from: "0.9.1")
+        .package(url: "https://github.com/emma-k-alexandra/WMATA.swift", from: "14.0.0"),
+        .package(url: "https://github.com/nalexn/ViewInspector", from: "0.9.1")
     ],
     targets: [
         .target(
             name: "WMATAUI",
-            dependencies: ["WMATA"]),
+            dependencies: [.product(name: "WMATA", package: "WMATA.swift")]),
         .testTarget(
             name: "WMATAUITests",
             dependencies: ["WMATAUI", "ViewInspector"])
