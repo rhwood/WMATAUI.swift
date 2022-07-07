@@ -67,14 +67,6 @@ public extension Line {
     }
 }
 
-/// Non-UI related extensions to WMATA.Line
-public extension Line {
-
-    /// All lines in the order listed on the [2019 System Map](https://wmata.com/schedules/maps/upload/2019-System-Map.pdf).
-    @available(swift, deprecated: 0.7.1, message: "Use Line.allCases instead.")
-    static let allInMapOrder: [Line] = Line.allCases
-}
-
 /// Conformance with Comparable
 extension Line: Comparable {
     

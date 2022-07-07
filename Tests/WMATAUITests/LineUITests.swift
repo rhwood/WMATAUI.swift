@@ -84,10 +84,6 @@ final class LinesUITests: XCTestCase {
         XCTAssertEqual(try text.attributes().foregroundColor(), Line.red.textColor)
     }
 
-    func testAllInMapOrder() {
-        XCTAssertEqual(Line.allCases, Line.allInMapOrder)
-    }
-
     func testComparable() {
         let unsorted: [Line] = [.yellow, .silver, .red]
         XCTAssertNotEqual(unsorted, unsorted.sorted())
