@@ -23,7 +23,7 @@ let package = Package(
     targets: [
         .target(
             name: "WMATAUI",
-            dependencies: ["WMATA"]),
+            dependencies: [.product(name: "WMATA", package: "WMATA.swift")]),
         .testTarget(
             name: "WMATAUITests",
             dependencies: ["WMATAUI", "ViewInspector"])
