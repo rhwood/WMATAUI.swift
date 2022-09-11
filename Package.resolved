@@ -1,34 +1,32 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "SwiftProtobuf",
-        "repositoryURL": "https://github.com/apple/swift-protobuf.git",
-        "state": {
-          "branch": null,
-          "revision": "e1499bc69b9040b29184f7f2996f7bab467c1639",
-          "version": "1.19.0"
-        }
-      },
-      {
-        "package": "ViewInspector",
-        "repositoryURL": "https://github.com/nalexn/ViewInspector",
-        "state": {
-          "branch": null,
-          "revision": "6b88c4ec1fa20cf38f2138052e63c8e79df5d76e",
-          "version": "0.9.1"
-        }
-      },
-      {
-        "package": "WMATA",
-        "repositoryURL": "https://github.com/emma-k-alexandra/WMATA.swift",
-        "state": {
-          "branch": null,
-          "revision": "189ba0a82a3743a6d88608d5fc7c6ec26c9ccce8",
-          "version": "14.0.0"
-        }
+  "pins" : [
+    {
+      "identity" : "swift-protobuf",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-protobuf.git",
+      "state" : {
+        "revision" : "e1499bc69b9040b29184f7f2996f7bab467c1639",
+        "version" : "1.19.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "viewinspector",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nalexn/ViewInspector",
+      "state" : {
+        "revision" : "6b88c4ec1fa20cf38f2138052e63c8e79df5d76e",
+        "version" : "0.9.1"
+      }
+    },
+    {
+      "identity" : "wmata.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/emma-k-alexandra/WMATA.swift",
+      "state" : {
+        "revision" : "9aa315da04887c63b151dca5abda855efa39c0fe",
+        "version" : "14.1.0"
+      }
+    }
+  ],
+  "version" : 2
 }
