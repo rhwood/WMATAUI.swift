@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nalexn/ViewInspector",
       "state" : {
-        "revision" : "6b88c4ec1fa20cf38f2138052e63c8e79df5d76e",
-        "version" : "0.9.1"
+        "revision" : "ac7df67c4e0593470eda90a550f8493a81609745",
+        "version" : "0.9.2"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/emma-k-alexandra/WMATA.swift",
       "state" : {
-        "revision" : "9aa315da04887c63b151dca5abda855efa39c0fe",
-        "version" : "14.1.0"
+        "revision" : "c7d9b07ea632f2aeefc54e5dee5d1936c90507d9",
+        "version" : "14.2.0"
       }
     }
   ],
