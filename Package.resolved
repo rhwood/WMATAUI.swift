@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/emma-k-alexandra/WMATA.swift",
       "state" : {
-        "revision" : "9aa315da04887c63b151dca5abda855efa39c0fe",
-        "version" : "14.1.0"
+        "revision" : "c7d9b07ea632f2aeefc54e5dee5d1936c90507d9",
+        "version" : "14.2.0"
       }
     }
   ],
