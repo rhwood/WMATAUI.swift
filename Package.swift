@@ -18,7 +18,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/emma-k-alexandra/WMATA.swift", from: "15.0.0"),
-        .package(url: "https://github.com/nalexn/ViewInspector", exact: "0.9.3")
+        .package(url: "https://github.com/nalexn/ViewInspector", exact: "0.9.4")
     ],
     targets: [
         .target(
