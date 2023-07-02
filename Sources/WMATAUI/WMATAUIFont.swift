@@ -14,12 +14,14 @@ public typealias WMATAUIFont = UIFont
 #endif
 import SwiftUI
 
+/// Helper function to deal with fonts.
 @available(macOS 11.0, *)
 public extension WMATAUIFont.TextStyle {
 
     // rule triggered by tvOS macro, so disabling
     // swiftlint:disable cyclomatic_complexity
-    /// Convert a Font.TextStyle to a UIFont.TextStyle
+    /// Convert a Font.TextStyle to a NSFont.TextStyle (if using AppKit) or UIFont.TextStyle (if using UIKit))
+    /// Note that on tvOS, this converts Font.TextStyle.largeTitle the same as Font.TextStyle.title
     static func with(textStyle: Font.TextStyle) -> WMATAUIFont.TextStyle {
         let style: WMATAUIFont.TextStyle
 

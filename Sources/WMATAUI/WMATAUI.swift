@@ -8,6 +8,7 @@
 import SwiftUI
 import WMATA
 
+/// Static functions to create WMATA branded roundels.
 public struct WMATAUI {
     
     /// Get a color dot sized for the given text style.

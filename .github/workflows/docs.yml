@@ -21,7 +21,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: macos-12
+    # change to macos-latest once macos-13 becomes the latest
+    runs-on: macos-13
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
@@ -30,6 +31,7 @@ jobs:
           export DOCC_JSON_PRETTYPRINT="YES"
           swift package generate-documentation \
             --target WMATAUI \
+            --include-extended-types \
             --disable-indexing \
             --transform-for-static-hosting \
             --hosting-base-path WMATAUI.swift
@@ -37,7 +39,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload docs directory
-          path: .build/plugins/Swift-DocC/outputs/WMATAUI.docarchive
+          path: .build/plugins/Swift-DocC/outputs/WMATAUI.doccarchive
       - name: Deploy to GitHub Pages 🐙
         id: deployment
         uses: actions/deploy-pages@v1
