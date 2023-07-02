@@ -8,7 +8,7 @@
 import SwiftUI
 import WMATA
 
-/// SwiftUI dependent extensions to Line
+/// SwiftUI dependent extensions to ``Line``.
 public extension Line {
 
     /// The line color.
@@ -30,7 +30,7 @@ public extension Line {
     }
 
     /// The text color (white or black) that contrasts with the line color.
-    /// These colors match the colors used by WMATA on their public maps, but do match the colors used by Apple in Maps on iOS 15.
+    /// These colors match the colors used by WMATA on their public maps, but do not match the colors used by Apple in Maps.
     var textColor: Color {
         switch self {
         case .red, .blue, .green:
@@ -41,10 +41,9 @@ public extension Line {
     }
 
     /// Get a textless dot in the line color sized for the given text style.
-    ///
-    /// - Parameter style: The style to match.
-    /// - Parameter factor: Optional factor to multiply the point size of the style by, defaults to 0.9.
-    ///
+    /// - Parameters:
+    ///   - style: The style to match.
+    ///   - factor: Optional factor to multiply the point size of the style by, defaults to 0.9.
     /// - Returns: A circle in in the color of this line sized to match the text style.
     @available(macOS 11.0, iOS 14.0, *)
     func dot(style: Font.TextStyle, factor: CGFloat = 0.9) -> some View {
@@ -54,10 +53,9 @@ public extension Line {
     /// Get a dot in the line color containing the two letter line code and sized for the given text style.
     ///
     /// To get a roundel where the line code text size matches the style size, use a factor of `2.0`.
-    ///
-    /// - Parameter style: The style to match.
-    /// - Parameter factor: Optional factor to multiply the point size of the style by; defaults to `1.0`.
-    ///
+    /// - Parameters:
+    ///   - style: The style to match.
+    ///   - factor: Optional factor to multiply the point size of the style by; defaults to `1.0`.
     /// - Returns: A circle in the color of this line sized to match the text style with the line code in a smaller text size.
     @available(iOS 14.0, *)
     @available(macCatalyst 14.0, *)
@@ -67,10 +65,10 @@ public extension Line {
     }
 }
 
-/// Conformance with Comparable
+/// Conformance with ``Comparable``.
 extension Line: Comparable {
     
-    /// Sort an array of Line by the order shown in the Metrorail map legend
+    /// Sort an array of ``Line`` by the order shown in the Metrorail map legend.
     public static func < (lhs: Line, rhs: Line) -> Bool {
         allCases.firstIndex(of: lhs)! < allCases.firstIndex(of: rhs)!
     }

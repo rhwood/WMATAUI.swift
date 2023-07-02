@@ -8,14 +8,14 @@
 import SwiftUI
 import WMATA
 
+/// Functions to return the WMATA standard font.
 public extension Font {
     
     /// The WMATA standard font with the given style. The WMATA style guide stipulates the use of Helvetica Neue.
     /// Note that station signage uses multiple variations of Helvetica for different signage.
-    ///
-    /// - Parameter style: The font style.
-    /// - Parameter factor: Factor by which to multiply default font size for style; defaults to `1.0`.
-    ///
+    /// - Parameters:
+    ///   - style: The font style.
+    ///   - factor: Factor by which to multiply default font size for style; defaults to `1.0`.
     /// - Returns: The WMATA standard font in the given style.
     @available(iOS 14.0, *)
     @available(macCatalyst 14.0, *)
@@ -26,10 +26,9 @@ public extension Font {
 
     /// The WMATA standard font with the given size. The WMATA style guide stipulates the use of Helvetica Neue.
     /// Note that station signage uses multiple variations of Helvetica for different signage.
-    ///
-    /// - Parameter size: The font size.
-    /// - Parameter relativeTo: Style the font size resizes relative to when user overrides system default sizes; defaults to `.body`.
-    ///
+    /// - Parameters:
+    ///   - size: The font size.
+    ///   - relativeTo: Style the font size resizes relative to when user overrides system default sizes; defaults to `.body`.
     /// - Returns: The WMATA standard font in the given size.
     @available(iOS 14.0, *)
     @available(macCatalyst 14.0, *)

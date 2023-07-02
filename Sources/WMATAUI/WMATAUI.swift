@@ -12,11 +12,10 @@ import WMATA
 public struct WMATAUI {
     
     /// Get a color dot sized for the given text style.
-    ///
-    /// - Parameter color: The dot's color.
-    /// - Parameter style: The style to match.
-    /// - Parameter factor: Optional factor to multiply the point size of the style by; defaults to `0.9`.
-    ///
+    /// - Parameters:
+    ///   - color: The dot's color.
+    ///   - style: The style to match.
+    ///   - factor: Optional factor to multiply the point size of the style by; defaults to `0.9`.
     /// - Returns: A circle in in the given color sized to match the text style.
     @available(macOS 11.0, iOS 14.0, *)
     public static func dot(color: Color, style: Font.TextStyle, factor: CGFloat = 0.9) -> some View {
@@ -28,13 +27,12 @@ public struct WMATAUI {
     /// Get a color dot sized for the given text style with a smaller text within it. This really works only for one or two character strings.
     ///
     /// To get a roundel where the line code text size matches the style size, use a factor of `2.0`.
-    ///
-    ///  - Parameter text: The text to display.
-    ///  - Parameter color: The color of the dot.
-    ///  - Parameter textColor: The color of the text in the dot.
-    ///  - Parameter style: The style to match.
-    ///  - Parameter factor: Optional factor to multiply the point size of the style by; defaults to `1.0`.
-    ///
+    /// - Parameters:
+    ///    - text: The text to display.
+    ///    - color: The color of the dot.
+    ///    - textColor: The color of the text in the dot.
+    ///    - style: The style to match.
+    ///    - factor: Optional factor to multiply the point size of the style by; defaults to `1.0`.
     /// - Returns: A circle in in the given color sized to match the text style with the given text in a smaller size.
     @available(iOS 14.0, *)
     @available(macCatalyst 14.0, *)
@@ -50,13 +48,12 @@ public struct WMATAUI {
     /// Get a color dot sized for the given text style with an image within it. This really works only for symbols.
     ///
     /// To get a roundel where the line code text size matches the style size, use a factor of `2.0`.
-    ///
-    ///  - Parameter image: The image to display.
-    ///  - Parameter color: The color of the dot.
-    ///  - Parameter textColor: The color of the text in the dot.
-    ///  - Parameter style: The style to match.
-    ///  - Parameter factor: Optional factor to multiply the point size of the style by; defaults to `1.0`.
-    ///
+    /// - Parameters:
+    ///    - image: The image to display.
+    ///    - color: The color of the dot.
+    ///    - textColor: The color of the text in the dot.
+    ///    - style: The style to match.
+    ///    - factor: Optional factor to multiply the point size of the style by; defaults to `1.0`.
     /// - Returns: A circle in in the given color sized to match the text style with the given image in a smaller size.
     @available(iOS 14.0, *)
     @available(macCatalyst 14.0, *)
@@ -72,13 +69,12 @@ public struct WMATAUI {
     /// Get a color dot sized for the given view. This really works only for symbols or one or two character strings.
     ///
     /// To get a roundel where the line code text size matches the style size, use a factor of `2.0`.
-    ///
-    ///  - Parameter view: The view to display.
-    ///  - Parameter color: The color of the dot.
-    ///  - Parameter textColor: The color of the text in the dot.
-    ///  - Parameter style: The style to match.
-    ///  - Parameter factor: Optional factor to multiply the point size of the style by; defaults to `1.0`.
-    ///
+    /// - Parameters:
+    ///    - view: The view to display.
+    ///    - color: The color of the dot.
+    ///    - textColor: The color of the text in the dot.
+    ///    - style: The style to match.
+    ///    - factor: Optional factor to multiply the point size of the style by; defaults to `1.0`.
     /// - Returns: A circle in in the given color sized to match the text style with the given view in a smaller size.
     @available(iOS 14.0, *)
     @available(macCatalyst 14.0, *)

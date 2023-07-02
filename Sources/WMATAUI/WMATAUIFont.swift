@@ -7,11 +7,11 @@
 
 #if os(macOS)
 import AppKit
-/// Opaque reference to NSFont or UIFont depending on use of AppKit or UIKit.
+/// Opaque reference to NSFont (macOS) or UIFont (everything else including macOS Catalyst).
 public typealias WMATAUIFont = NSFont
 #else
 import UIKit
-/// Opaque reference to NSFont or UIFont depending on use of AppKit or UIKit.
+/// Opaque reference to NSFont (macOS) or UIFont (everything else including macOS Catalyst).
 public typealias WMATAUIFont = UIFont
 #endif
 import SwiftUI
@@ -22,8 +22,12 @@ public extension WMATAUIFont.TextStyle {
 
     // rule triggered by tvOS macro, so disabling
     // swiftlint:disable cyclomatic_complexity
-    /// Convert a Font.TextStyle to a NSFont.TextStyle (if using AppKit) or UIFont.TextStyle (if using UIKit))
-    /// Note that on tvOS, this converts Font.TextStyle.largeTitle the same as Font.TextStyle.title
+    /// Convert a Font.TextStyle to a ``NSFont.TextStyle`` (on macOS) or ``UIFont.TextStyle``
+    /// (on everything else including macOS Catalyst).
+    ///
+    /// Note that on tvOS, this converts ``Font.TextStyle.largeTitle`` the same as ``Font.TextStyle.title``.
+    /// - Parameter textStyle: the ``Font.TextStyle`` to convert.
+    /// - Returns: The corresponding ``WMATAUIFont.TextStyle`` for the given textStyle.
     static func with(textStyle: Font.TextStyle) -> WMATAUIFont.TextStyle {
         let style: WMATAUIFont.TextStyle
 
