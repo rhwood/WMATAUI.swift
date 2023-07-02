@@ -33,7 +33,7 @@ jobs:
             generate-documentation --target WMATAUI \
             --disable-indexing \
             --transform-for-static-hosting \
-            --hosting-base-path WMATAUI \
+            --hosting-base-path WMATAUI.swift \
             --output-path ./docs
       - name: Upload artifact 📜
         uses: actions/upload-pages-artifact@v1
