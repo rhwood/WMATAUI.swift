@@ -7,14 +7,16 @@
 
 #if os(macOS)
 import AppKit
+/// Opaque reference to NSFont or UIFont depending on use of AppKit or UIKit.
 public typealias WMATAUIFont = NSFont
 #else
 import UIKit
+/// Opaque reference to NSFont or UIFont depending on use of AppKit or UIKit.
 public typealias WMATAUIFont = UIFont
 #endif
 import SwiftUI
 
-/// Helper function to deal with fonts.
+/// Extension of ``WMATAUIFont.TextStyle``
 @available(macOS 11.0, *)
 public extension WMATAUIFont.TextStyle {
 
