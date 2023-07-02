@@ -28,18 +28,16 @@ jobs:
       - name: Package documentation 🛠
         run: |
           export DOCC_JSON_PRETTYPRINT="YES"
-          swift package \
-            --allow-writing-to-directory ./docs \
-            generate-documentation --target WMATAUI \
+          swift package generate-documentation \
+            --target WMATAUI \
             --disable-indexing \
             --transform-for-static-hosting \
-            --hosting-base-path WMATAUI.swift \
-            --output-path ./docs
+            --hosting-base-path WMATAUI.swift
       - name: Upload artifact 📜
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload docs directory
-          path: 'docs'
+          path: .build/plugins/Swift-DocC/outputs/WMATAUI.docarchive
       - name: Deploy to GitHub Pages 🐙
         id: deployment
         uses: actions/deploy-pages@v1
