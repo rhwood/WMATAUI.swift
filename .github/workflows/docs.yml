@@ -51,4 +51,4 @@ jobs:
           path: .build/plugins/Swift-DocC/outputs/WMATAUI.doccarchive
       - name: Deploy to GitHub Pages 🐙
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
