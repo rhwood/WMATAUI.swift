@@ -45,7 +45,7 @@ jobs:
             --transform-for-static-hosting \
             --hosting-base-path WMATAUI.swift
       - name: Upload artifact 📜
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         with:
           # Upload docs directory
           path: .build/plugins/Swift-DocC/outputs/WMATAUI.doccarchive
