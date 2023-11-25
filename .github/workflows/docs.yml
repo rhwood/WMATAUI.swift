@@ -24,12 +24,17 @@ jobs:
     # change to macos-latest once macos-13 becomes the latest
     runs-on: macos-13
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
-      - uses: swift-actions/setup-swift@v1
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: swift-actions/setup-swift@f51889efb55dccf13be0ee727e3d6c89a096fb4c # v1.25.0
         with:
           swift-version: "5.8"
-      - uses: actions/cache@v3
+      - uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
         with:
           path: .build
           key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
@@ -45,10 +50,10 @@ jobs:
             --transform-for-static-hosting \
             --hosting-base-path WMATAUI.swift
       - name: Upload artifact 📜
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@a753861a5debcf57bf8b404356158c8e1e33150c # v2.0.0
         with:
           # Upload docs directory
           path: .build/plugins/Swift-DocC/outputs/WMATAUI.doccarchive
       - name: Deploy to GitHub Pages 🐙
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@9dbe3824824f8a1377b8e298bafde1a50ede43e5 # v2.0.4
