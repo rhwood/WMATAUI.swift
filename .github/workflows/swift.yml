@@ -11,6 +11,9 @@ on:
       main
     ]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     name: "WMATAUI unit tests"
@@ -27,10 +30,15 @@ jobs:
     runs-on: macos-12
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 50
-      - uses: actions/cache@v3
+      - uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
         with:
           path: .build
           key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
@@ -51,7 +59,7 @@ jobs:
           xcrun llvm-cov export --format="lcov" --instr-profile=$( echo ~/Library/Developer/Xcode/DerivedData/WMATAUI-*/Build/ProfileData/*/Coverage.profdata ) --object=$( echo ~/Library/Developer/Xcode/DerivedData/WMATAUI-*/Build/Products/Debug*/WMATAUI.o ) > coverage.lcov
         # run: swift test -v
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3.1.4
         with:
           files: coverage.lcov
           fail_ci_if_error: true
