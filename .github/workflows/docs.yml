@@ -31,7 +31,7 @@ jobs:
 
       - name: Checkout 🛎️
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - uses: swift-actions/setup-swift@f51889efb55dccf13be0ee727e3d6c89a096fb4c # v1.25.0
+      - uses: swift-actions/setup-swift@cdbe0f7f4c77929b6580e71983e8606e55ffe7e4 # v1.26.0
         with:
           swift-version: "5.8"
       - uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
