@@ -1,6 +1,24 @@
 {
   "pins" : [
     {
+      "identity" : "csqlite",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stephencelis/CSQLite.git",
+      "state" : {
+        "revision" : "9106e983d5e3d5149ee35281ec089484b0def018",
+        "version" : "0.0.3"
+      }
+    },
+    {
+      "identity" : "sqlite.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stephencelis/SQLite.swift.git",
+      "state" : {
+        "revision" : "7a2e3cd27de56f6d396e84f63beefd0267b55ccb",
+        "version" : "0.14.1"
+      }
+    },
+    {
       "identity" : "swift-docc-plugin",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-docc-plugin",
@@ -41,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/emma-k-alexandra/WMATA.swift",
       "state" : {
-        "revision" : "80ca6665786dd8a1e36828bd7ab5ba802f8c049a",
-        "version" : "15.1.0"
+        "revision" : "2606dbc750aec6945aa372c5db1f695b9869fe56",
+        "version" : "15.2.0"
       }
     }
   ],
