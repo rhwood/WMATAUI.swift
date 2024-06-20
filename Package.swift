@@ -6,10 +6,10 @@ import PackageDescription
 let package = Package(
     name: "WMATAUI",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v15),
         .macOS(.v12),
-        .tvOS(.v14),
-        .watchOS(.v7)
+        .tvOS(.v15),
+        .watchOS(.v8)
     ],
     products: [
         .library(
