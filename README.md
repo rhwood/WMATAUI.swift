@@ -11,7 +11,7 @@ SwiftUI to accompany [WMATA.swift](https://github.com/emma-k-alexandra/WMATA.swi
 ## Supported Platforms
 
 - iOS 14.0 or newer
-- macOS 10.15 or newer
+- macOS 12.0 or newer
 - macOS Catalyst 14.0 or newer
 - tvOS 14.0 or newer
 
