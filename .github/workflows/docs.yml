@@ -21,8 +21,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    # change to macos-latest once macos-13 becomes the latest
-    runs-on: macos-13
+    runs-on: macos-latest
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
