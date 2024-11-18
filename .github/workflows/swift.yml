@@ -59,7 +59,7 @@ jobs:
           xcrun llvm-cov export --format="lcov" --instr-profile=$( echo ~/Library/Developer/Xcode/DerivedData/WMATAUI-*/Build/ProfileData/*/Coverage.profdata ) --object=$( echo ~/Library/Developer/Xcode/DerivedData/WMATAUI-*/Build/Products/Debug*/WMATAUI.o ) > coverage.lcov
         # run: swift test -v
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238 # v4.6.0
+        uses: codecov/codecov-action@5c47607acb93fed5485fdbf7232e8a31425f672a # v5.0.2
         with:
           files: coverage.lcov
           fail_ci_if_error: true
