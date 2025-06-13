@@ -18,8 +18,8 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/emma-k-alexandra/WMATA.swift", from: "15.2.0"),
-        .package(url: "https://github.com/nalexn/ViewInspector", from: "0.9.11"),
-        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.3.0")
+        .package(url: "https://github.com/nalexn/ViewInspector", from: "0.10.2"),
+        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.4.4")
     ],
     targets: [
         .target(
