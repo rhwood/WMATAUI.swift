@@ -46,8 +46,8 @@ final class LinesUITests: XCTestCase {
         let baseFontSize = 19.0
         let largeFontSize = 55.0
 #elseif os(tvOS)
-        let baseFontSize = 44.0
-        let largeFontSize = 44.0
+        let baseFontSize = 43.0
+        let largeFontSize = 43.0
 #else // watchOS
         let baseFontSize = 40.0
         let largeFontSize = 40.0
