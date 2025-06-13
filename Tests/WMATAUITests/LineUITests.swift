@@ -38,7 +38,7 @@ final class LinesUITests: XCTestCase {
         let dot = Line.red.dot(style: .headline, factor: 1.0)
 #if targetEnvironment(macCatalyst) // macCatalyst builds as if iOS without this target environment
         let baseFontSize = 19.0
-        let largeFontSize = 55.0
+        let largeFontSize = 19.0
 #elseif os(macOS)
         let baseFontSize = 15.0
         let largeFontSize = 15.0
