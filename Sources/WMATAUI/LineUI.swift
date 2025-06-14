@@ -66,7 +66,7 @@ public extension Line {
 }
 
 /// Conformance with ``Comparable``.
-extension Line: Comparable {
+extension Line: @retroactive Comparable {
     
     /// Sort an array of ``Line`` by the order shown in the Metrorail map legend.
     public static func < (lhs: Line, rhs: Line) -> Bool {
