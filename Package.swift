@@ -17,9 +17,11 @@ let package = Package(
             targets: ["WMATAUI"])
     ],
     dependencies: [
+        // allow dependencies incorporating software will directly use to be minimums
         .package(url: "https://github.com/emma-k-alexandra/WMATA.swift", from: "15.2.0"),
+        // documentation and test dependencies should be exact
         .package(url: "https://github.com/nalexn/ViewInspector", from: "0.9.11"),
-        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.3.0")
+        .package(url: "https://github.com/apple/swift-docc-plugin", exact: "1.4.4")
     ],
     targets: [
         .target(
