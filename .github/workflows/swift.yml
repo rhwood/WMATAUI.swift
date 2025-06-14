@@ -27,7 +27,7 @@ jobs:
           "'platform=iOS Simulator,name=iPhone 8'",
           "'platform=watchOS Simulator,name=Apple Watch Series 5 (40mm)'"
         ]
-    runs-on: macos-latest
+    runs-on: macos-15
 
     steps:
       - name: Harden Runner
