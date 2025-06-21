@@ -10,6 +10,15 @@ import ViewInspector
 @available(macOS 11.0, iOS 14.0, *)
 final class LinesUITests: XCTestCase {
 
+    func testNewStyle() {
+        XCTAssertEqual(Line.red.newStyle, "R")
+        XCTAssertEqual(Line.orange.newStyle, "O")
+        XCTAssertEqual(Line.blue.newStyle, "B")
+        XCTAssertEqual(Line.green.newStyle, "G")
+        XCTAssertEqual(Line.yellow.newStyle, "Y")
+        XCTAssertEqual(Line.silver.newStyle, "S")
+    }
+
     func testColor() {
         XCTAssertEqual(Line.red.color, .metrorailRed)
         XCTAssertEqual(Line.orange.color, .metrorailOrange)
@@ -80,7 +89,7 @@ final class LinesUITests: XCTestCase {
     @available(macCatalyst 14.0, *)
     func testRoundel() throws {
         let roundel = Line.red.roundel(style: .headline)
-        let text = try roundel.inspect().find(text: Line.red.rawValue)
+        let text = try roundel.inspect().find(text: Line.red.newStyle)
         XCTAssertEqual(try text.attributes().foregroundColor(), Line.red.textColor)
     }
 

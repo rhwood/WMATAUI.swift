@@ -83,7 +83,7 @@ public struct WMATAUI {
         ZStack {
             WMATAUI.dot(color: color, style: style, factor: factor)
             view
-                .font(.metroFont(style, factor: 0.5 * factor).bold())
+                .font(.metroFont(style, factor: 0.7 * factor).bold())
                 .foregroundColor(textColor)
         }
     }
@@ -98,11 +98,11 @@ struct ContentView_Previews: PreviewProvider {
         let image = Image(systemName: "tram.fill")
         VStack {
             HStack {
-                WMATAUI.roundel(text: "AB", color: .purple, textColor: .white, style: style)
+                WMATAUI.roundel(text: "M", color: .purple, textColor: .white, style: style)
                 Text("Text Fits").font(.metroFont(style))
             }
             HStack {
-                WMATAUI.roundel(text: "CDE", color: .purple, textColor: .white, style: style)
+                WMATAUI.roundel(text: "WM", color: .purple, textColor: .white, style: style)
                 Text("Text To Long").font(.metroFont(style))
             }
             HStack {
@@ -117,12 +117,12 @@ struct ContentView_Previews: PreviewProvider {
                 WMATAUI.roundel(image: image, color: .green, textColor: .black, style: style)
             }
             HStack {
-                WMATAUI.roundel(text: "AB", color: .purple, textColor: .white, style: style)
+                WMATAUI.roundel(text: "M", color: .purple, textColor: .white, style: style)
                 Text("Huge Text").font(.metroFont(style))
             }
             .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
             HStack {
-                WMATAUI.roundel(text: "AB", color: .purple, textColor: .white, style: .caption)
+                WMATAUI.roundel(text: "M", color: .purple, textColor: .white, style: .caption)
                 Text("Tiny Text").font(.metroFont(.caption))
             }
             .environment(\.sizeCategory, .extraSmall)
