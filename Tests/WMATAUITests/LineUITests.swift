@@ -80,7 +80,7 @@ final class LinesUITests: XCTestCase {
     @available(macCatalyst 14.0, *)
     func testRoundel() throws {
         let roundel = Line.red.roundel(style: .headline)
-        let text = try roundel.inspect().find(text: Line.red.rawValue)
+        let text = try roundel.inspect().find(text: Line.red.newStyle)
         XCTAssertEqual(try text.attributes().foregroundColor(), Line.red.textColor)
     }
 

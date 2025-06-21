@@ -11,6 +11,24 @@ import WMATA
 /// SwiftUI dependent extensions to ``Line``.
 public extension Line {
 
+    // New style single letter line names in use after 22 June 2025
+    var newStyle: String {
+        switch self {
+        case .red:
+            return "R"
+        case .orange:
+            return "O"
+        case .blue:
+            return "B"
+        case .green:
+            return "G"
+        case .yellow:
+            return "Y"
+        case .silver:
+            return "S"
+        }
+    }
+
     /// The line color.
     var color: Color {
         switch self {
@@ -61,7 +79,7 @@ public extension Line {
     @available(macCatalyst 14.0, *)
     @available(macOS 11.0, *)
     func roundel(style: Font.TextStyle, factor: CGFloat = 1.0) -> some View {
-        WMATAUI.roundel(text: self.rawValue, color: self.color, textColor: self.textColor, style: style, factor: factor)
+        WMATAUI.roundel(text: self.newStyle, color: self.color, textColor: self.textColor, style: style, factor: factor)
     }
 }
 
