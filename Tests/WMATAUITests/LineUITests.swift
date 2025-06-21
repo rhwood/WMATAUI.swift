@@ -10,6 +10,15 @@ import ViewInspector
 @available(macOS 11.0, iOS 14.0, *)
 final class LinesUITests: XCTestCase {
 
+    func testNewStyle() {
+        XCTAssertEqual(Line.red.newStyle, "R")
+        XCTAssertEqual(Line.orange.newStyle, "O")
+        XCTAssertEqual(Line.blue.newStyle, "B")
+        XCTAssertEqual(Line.green.newStyle, "G")
+        XCTAssertEqual(Line.yellow.newStyle, "Y")
+        XCTAssertEqual(Line.silver.newStyle, "S")
+    }
+
     func testColor() {
         XCTAssertEqual(Line.red.color, .metrorailRed)
         XCTAssertEqual(Line.orange.color, .metrorailOrange)
