@@ -14,11 +14,7 @@ final class WMATAUITests: XCTestCase {
                                    relativeTo: .headline))
     }
 
-    func testRoundelText() {
-        XCTAssertNotNil(WMATAUI.roundel(text: "M", color: .green, textColor: .pink, style: .body, factor: 0.5))
-    }
-
-    func testDot() {
-        XCTAssertNotNil(WMATAUI.dot(color: .red, style: .body))
+    func testRoundelImage() {
+        XCTAssertNotNil(WMATAUI.roundel(image: Image(systemName: "tram.fill"), color: .green, textColor: .pink, style: .body, factor: 0.5))
     }
 }
