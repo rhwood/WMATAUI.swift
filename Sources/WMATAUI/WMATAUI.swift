@@ -26,7 +26,7 @@ public struct WMATAUI {
 
     /// Get a color dot sized for the given text style with a smaller text within it. This really works only for one or two character strings.
     ///
-    /// To get a roundel where the line code text size matches the style size, use a factor of `2.0`.
+    /// To get a roundel where the line code text size matches the style size, use a factor of `1.429`.
     /// - Parameters:
     ///    - text: The text to display.
     ///    - color: The color of the dot.
@@ -42,12 +42,13 @@ public struct WMATAUI {
                         color: color,
                         textColor: textColor,
                         style: style,
-                        factor: factor)
+                        factor: factor,
+                        contentFactor: 0.7)
     }
 
     /// Get a color dot sized for the given text style with an image within it. This really works only for symbols.
     ///
-    /// To get a roundel where the line code text size matches the style size, use a factor of `2.0`.
+    /// To get a roundel where the image size matches the style size, use a factor of `2.0`.
     /// - Parameters:
     ///    - image: The image to display.
     ///    - color: The color of the dot.
@@ -63,27 +64,29 @@ public struct WMATAUI {
                         color: color,
                         textColor: textColor,
                         style: style,
-                        factor: factor)
+                        factor: factor,
+                        contentFactor: 0.5)
     }
 
     /// Get a color dot sized for the given view. This really works only for symbols or one or two character strings.
     ///
-    /// To get a roundel where the line code text size matches the style size, use a factor of `2.0`.
+    /// To get a roundel where the line code text size matches the style size, use a factor of `2.0` when using the default contentFactor.
     /// - Parameters:
     ///    - view: The view to display.
     ///    - color: The color of the dot.
     ///    - textColor: The color of the text in the dot.
     ///    - style: The style to match.
     ///    - factor: Optional factor to multiply the point size of the style by; defaults to `1.0`.
+    ///    - contentFactor: Optional factor to multiply the size of the image or text inside the roundel by; defaults to `0.5`.
     /// - Returns: A circle in in the given color sized to match the text style with the given view in a smaller size.
     @available(iOS 14.0, *)
     @available(macCatalyst 14.0, *)
     @available(macOS 11.0, *)
-    private static func roundel<Content: View>(view: Content, color: Color, textColor: Color, style: Font.TextStyle, factor: CGFloat = 1.0) -> some View {
+    private static func roundel<Content: View>(view: Content, color: Color, textColor: Color, style: Font.TextStyle, factor: CGFloat = 1.0, contentFactor: CGFloat = 0.5) -> some View {
         ZStack {
             WMATAUI.dot(color: color, style: style, factor: factor)
             view
-                .font(.metroFont(style, factor: 0.7 * factor).bold())
+                .font(.metroFont(style, factor: contentFactor * factor).bold())
                 .foregroundColor(textColor)
         }
     }

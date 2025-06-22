@@ -13,4 +13,8 @@ final class WMATAUITests: XCTestCase {
                                    size: WMATAUIFont.preferredFont(forTextStyle: .headline).pointSize,
                                    relativeTo: .headline))
     }
+
+    func testRoundelImage() {
+        XCTAssertNotNil(WMATAUI.roundel(image: Image(systemName: "tram.fill"), color: .green, textColor: .pink, style: .body, factor: 0.5))
+    }
 }
