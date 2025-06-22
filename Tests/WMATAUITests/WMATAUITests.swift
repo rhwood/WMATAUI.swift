@@ -13,4 +13,12 @@ final class WMATAUITests: XCTestCase {
                                    size: WMATAUIFont.preferredFont(forTextStyle: .headline).pointSize,
                                    relativeTo: .headline))
     }
+
+    func testRoundelText() {
+        XCTAssertNotNil(WMATAUI.roundel(text: "M", color: .green, textColor: .pink, style: .body, factor: 0.5))
+    }
+
+    func testDot() {
+        XCTAssertNotNil(WMATAUI.dot(color: .red, style: .body))
+    }
 }
