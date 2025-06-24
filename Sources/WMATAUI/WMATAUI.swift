@@ -26,7 +26,7 @@ public struct WMATAUI {
 
     /// Get a color dot sized for the given text style with a smaller text within it. This really works only for one or two character strings.
     ///
-    /// To get a roundel where the line code text size matches the style size, use a factor of `1.429`.
+    /// To get a roundel where the line code text size matches the style size, use a factor of `1 / 0.7` or `1.42857142857`.
     /// - Parameters:
     ///    - text: The text to display.
     ///    - color: The color of the dot.
@@ -70,7 +70,7 @@ public struct WMATAUI {
 
     /// Get a color dot sized for the given view. This really works only for symbols or one or two character strings.
     ///
-    /// To get a roundel where the line code text size matches the style size, use a factor of `2.0` when using the default contentFactor.
+    /// To get a roundel where the line code text size matches the style size, use a factor of `2.0` when using the default contentFactor or of `1 / contentFactor` for other size.
     /// - Parameters:
     ///    - view: The view to display.
     ///    - color: The color of the dot.

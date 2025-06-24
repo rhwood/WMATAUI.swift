@@ -8,8 +8,8 @@
 import SwiftUI
 
 /// WMATA Colors from
-/// [Brand and Style Guidelines 3/2018](https://www.wmata.com/business/procurement/solicitations/documents/Metro_Brand_and_Style_Guidelines.pdf) and
-/// [Signage Standards Manual - Station Signs](https://www.wmata.com/business/procurement/solicitations/documents/Manual%20of%20Graphics%20Standards_03032008_pages_101-201.pdf)
+/// [Brand and Style Guidelines 3/2018](https://web.archive.org/web/20240119175548/https://www.wmata.com/business/procurement/solicitations/documents/Metro_Brand_and_Style_Guidelines.pdf) and
+/// [Signage Standards Manual - Station Signs](https://web.archive.org/web/20201118204550/https://www.wmata.com/business/procurement/solicitations/documents/Manual%20of%20Graphics%20Standards_03032008_pages_101-201.pdf)
 public extension Color {
 
     /// Red Line (Pantone 193c)
