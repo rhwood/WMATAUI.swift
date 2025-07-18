@@ -21,7 +21,7 @@ let package = Package(
         .package(url: "https://github.com/emma-k-alexandra/WMATA.swift", from: "15.2.0"),
         // documentation and test dependencies should be exact
         .package(url: "https://github.com/nalexn/ViewInspector", exact: "0.10.0"),
-        .package(url: "https://github.com/apple/swift-docc-plugin", exact: "1.4.4")
+        .package(url: "https://github.com/apple/swift-docc-plugin", exact: "1.4.5")
     ],
     targets: [
         .target(
