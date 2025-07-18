@@ -11,7 +11,7 @@ import WMATA
 /// SwiftUI dependent extensions to ``Line``.
 public extension Line {
 
-    // New style single letter line names in use after 22 June 2025
+    // New style single letter line names introduced starting 22 June 2025
     var newStyle: String {
         switch self {
         case .red:
