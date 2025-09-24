@@ -24,7 +24,7 @@ jobs:
           "'platform=macOS,variant=Mac Catalyst'",
           "'platform=macOS'",
           "'platform=tvOS Simulator,name=Apple TV'",
-          "'platform=iOS Simulator,name=Any iOS Simulator Device'",
+          "'platform=iOS Simulator,name=iPhone 16'",
           "'platform=watchOS Simulator,name=Apple Watch SE (40mm) (2nd generation)'"
         ]
     runs-on: macos-latest
