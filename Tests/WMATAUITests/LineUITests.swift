@@ -77,7 +77,9 @@ final class LinesUITests: XCTestCase {
             dot
                 .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
                 .readSize { size in
-                    XCTAssertEqual(size.height, largeFontSize)
+                    // rounding up expanded sizes instead of dealing with 1/3 pt differences
+                    // between target size and rendered size
+                    XCTAssertEqual(size.height.rounded(.up), largeFontSize)
                     largeSizeExpectation.fulfill()
                 }
         )
