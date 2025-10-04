@@ -23,9 +23,9 @@ jobs:
         destination: [
           "'platform=macOS,variant=Mac Catalyst'",
           "'platform=macOS'",
-          "'platform=tvOS Simulator,name=Apple TV'",
-          "'platform=iOS Simulator,name=iPhone 16'",
-          "'platform=watchOS Simulator,name=Apple Watch SE (40mm) (2nd generation)'"
+          "'platform=tvOS Simulator,name=Apple TV,OS=26.0'",
+          "'platform=iOS Simulator,name=iPhone 16,OS=26.0'",
+          "'platform=watchOS Simulator,name=Apple Watch SE (40mm) (2nd generation),OS=26.0'"
         ]
     runs-on: macos-latest
 
