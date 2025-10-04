@@ -48,6 +48,7 @@ final class LinesUITests: XCTestCase {
 #if targetEnvironment(macCatalyst) // macCatalyst builds as if iOS without this target environment
         let baseFontSize = 19.0
         let largeFontSize = 19.0
+        try XCTSkipIf(true, "showView has empty implementaton in macCatalyst")
 #elseif os(macOS)
         let baseFontSize = 15.0
         let largeFontSize = 15.0
@@ -121,11 +122,14 @@ extension View {
 }
 
 func showView<T: View>(_ view: T) {
-#if os(macOS)
+#if targetEnvironment(macCatalyst)
+    // do nothing
+#elseif os(macOS)
     let window = NSWindow()
     window.contentViewController = NSHostingController(rootView: view)
     window.makeKeyAndOrderFront(nil)
 #elseif os(watchOS)
+    // do nothing
 #else
     let window = UIWindow(frame: UIScreen.main.bounds)
     window.rootViewController = UIHostingController(rootView: view)
