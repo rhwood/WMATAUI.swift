@@ -9,6 +9,7 @@ let package = Package(
         .iOS(.v15),
         .macOS(.v12),
         .tvOS(.v15),
+        .visionOS(.v1),
         .watchOS(.v8)
     ],
     products: [
@@ -17,7 +18,7 @@ let package = Package(
             targets: ["WMATAUI"])
     ],
     dependencies: [
-        // allow dependencies incorporating software will directly use to be minimums
+        // dependencies incorporating software will directly use should be minimums
         .package(url: "https://github.com/emma-k-alexandra/WMATA.swift", from: "15.2.0"),
         // documentation and test dependencies should be exact
         .package(url: "https://github.com/nalexn/ViewInspector", exact: "0.10.0"),

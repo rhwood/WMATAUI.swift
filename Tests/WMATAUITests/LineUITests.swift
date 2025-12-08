@@ -128,6 +128,8 @@ func showView<T: View>(_ view: T) {
     let window = NSWindow()
     window.contentViewController = NSHostingController(rootView: view)
     window.makeKeyAndOrderFront(nil)
+#elseif os(visionOS)
+    // do nothing
 #elseif os(watchOS)
     // do nothing
 #else
