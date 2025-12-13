@@ -14,8 +14,7 @@ SwiftUI to accompany [WMATA.swift](https://github.com/emma-k-alexandra/WMATA.swi
 - macOS 12.0 or newer
 - macOS Catalyst 15.0 or newer
 - tvOS 15.0 or newer
+- visionOS 1.0 or newer
 - watchOS 8.0 or newer
 
-Note that some font-related methods require macOS 11 or newer.
-
-This has not been tested on watchOS.
+This has not been funtionally tested on visionOS or watchOS.

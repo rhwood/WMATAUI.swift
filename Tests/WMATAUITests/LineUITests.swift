@@ -58,6 +58,9 @@ final class LinesUITests: XCTestCase {
 #elseif os(tvOS)
         let baseFontSize = 44.0
         let largeFontSize = 44.0
+#elseif os(visionOS)
+        let baseFontSize = 19.0
+        let largeFontSize = 39.0
 #else // watchOS
         let baseFontSize = 40.0
         let largeFontSize = 40.0
@@ -130,8 +133,8 @@ func showView<T: View>(_ view: T) {
     window.makeKeyAndOrderFront(nil)
 #elseif os(watchOS)
     // do nothing
-#else
-    let window = UIWindow(frame: UIScreen.main.bounds)
+#else // iOS and visionOS
+    let window = UIWindow()
     window.rootViewController = UIHostingController(rootView: view)
     window.makeKeyAndVisible()
 #endif
