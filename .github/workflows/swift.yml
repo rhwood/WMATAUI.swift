@@ -21,7 +21,7 @@ jobs:
     strategy:
       matrix:
         destination: [
-          "'platform=iOS Simulator,name=iPhone 16,OS=26.2'",
+          "'platform=iOS Simulator,name=iPhone 17,OS=26.2'",
           "'platform=macOS'",
           "'platform=macOS,variant=Mac Catalyst'",
           "'platform=tvOS Simulator,name=Apple TV,OS=26.2'",
