@@ -21,12 +21,12 @@ jobs:
     strategy:
       matrix:
         destination: [
-          "'platform=iOS Simulator,name=iPhone 16,OS=26.1'",
+          "'platform=iOS Simulator,name=iPhone 17,OS=26.2'",
           "'platform=macOS'",
           "'platform=macOS,variant=Mac Catalyst'",
-          "'platform=tvOS Simulator,name=Apple TV,OS=26.1'",
-          "'platform=visionOS Simulator,name=Apple Vision Pro,OS=26.1'",
-          "'platform=watchOS Simulator,name=Apple Watch SE (40mm) (2nd generation),OS=26.1'"
+          "'platform=tvOS Simulator,name=Apple TV,OS=26.2'",
+          "'platform=visionOS Simulator,name=Apple Vision Pro,OS=26.2'",
+          "'platform=watchOS Simulator,name=Apple Watch SE 3 (40mm),OS=26.2'"
         ]
     runs-on: macos-latest
 
@@ -60,7 +60,7 @@ jobs:
           xcrun llvm-cov export --format="lcov" --instr-profile=$( echo ~/Library/Developer/Xcode/DerivedData/WMATAUI-*/Build/ProfileData/*/Coverage.profdata ) --object=$( echo ~/Library/Developer/Xcode/DerivedData/WMATAUI-*/Build/Products/Debug*/WMATAUI.o ) > coverage.lcov
         # run: swift test -v
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@e79a6962e0d4c0c17b229090214935d2e33f8354 # v6.0.1
+        uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f # v7.0.0
         with:
           files: coverage.lcov
           fail_ci_if_error: true
