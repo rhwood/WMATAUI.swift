@@ -21,12 +21,12 @@ jobs:
     strategy:
       matrix:
         destination: [
-          "'platform=iOS Simulator,name=iPhone 16'",
+          "'platform=iOS Simulator,name=iPhone 16,OS=26.1'",
           "'platform=macOS'",
           "'platform=macOS,variant=Mac Catalyst'",
-          "'platform=tvOS Simulator,name=Apple TV'",
-          "'platform=visionOS Simulator,name=Apple Vision Pro'",
-          "'platform=watchOS Simulator,name=Apple Watch SE (40mm) (2nd generation)'"
+          "'platform=tvOS Simulator,name=Apple TV,OS=26.1'",
+          "'platform=visionOS Simulator,name=Apple Vision Pro,OS=26.1'",
+          "'platform=watchOS Simulator,name=Apple Watch SE (40mm) (2nd generation),OS=26.1'"
         ]
     runs-on: macos-latest
 
